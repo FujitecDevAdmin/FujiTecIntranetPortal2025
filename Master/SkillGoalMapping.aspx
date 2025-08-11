@@ -1,0 +1,148 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SkillGoalMapping.aspx.cs" Inherits="FujiTecIntranetPortal.Master.SkillGoalMapping" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeaderContent" runat="server">
+    <style type="text/css">
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+            height: 2.5%;
+        }
+
+        p {
+            background-color: #CF2331;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auto-style2 {
+            width: 17%;
+            height: 30px;
+        }
+
+        .myInput:focus {
+            border: solid 1px green !important;
+            outline: double !important;
+        }
+
+        .middlepane {
+            width: 85%;
+            float: left;
+            background-color: white;
+            border-collapse: collapse;
+        }
+
+        .rightpane {
+            width: 75%;
+            position: relative;
+            float: right;
+            background-color: white;
+            border-collapse: collapse;
+        }
+
+        .normal-table1 {
+            font-size: 1px !important;
+            border: 10px solid white !important;
+            padding: 2px !important;
+            margin-bottom: 5px !important;
+        }
+        .normal-table2 {
+            font-size: 1px !important;
+            border: 2px solid Black !important;
+            padding: 2px !important;
+            margin-bottom: 10px !important;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
+    <asp:Panel runat="server" SkinID="Default" ID="dft"></asp:Panel>
+    <div class="page-container scroll-y">
+        <div>
+            <h3 class="text-center" style="font-family: Verdana">Skill Mapping Master</h3>
+            <table class="normal_grid">
+                <tr>
+                    <th class="auto-style2"><strong>Department: <span class="hlt-txt">*</span></strong>
+                    </th>
+                    <td class="auto-style2">
+                        <asp:DropDownList ID="ddDepartment" CssClass="myInput" runat="server" Width="183px" TabIndex="1" AutoPostBack="true" OnSelectedIndexChanged="ddDepartment_SelectedIndexChanged" ></asp:DropDownList>
+                    </td>
+                    <th class="auto-style2"><strong>Designation: <span class="hlt-txt">*</span></strong>
+                    </th>
+                    <td class="auto-style2">
+                        <asp:DropDownList ID="ddDesignation" CssClass="myInput" runat="server" Width="183px" TabIndex="2" AutoPostBack="true" OnSelectedIndexChanged="ddDesignation_SelectedIndexChanged" ></asp:DropDownList>
+                    </td>                    
+                </tr>                
+            </table>
+        </div>
+        <div class="normal-table2">
+            <h3 class="text-center" style="font-family: Verdana">Training Details</h3>
+            <table>
+                <tr>
+                     <th class="auto-style2"><strong>Skill ID: <span class="hlt-txt">*</span></strong>
+                    </th>
+                    <td class="auto-style2">
+                        <asp:DropDownList ID="ddSkillID" CssClass="myInput" runat="server" Width="175px" TabIndex="3" AutoPostBack="true"  OnSelectedIndexChanged="ddSkillID_SelectedIndexChanged"></asp:DropDownList>
+                    </td>
+                    <th class="auto-style2"><strong>Skill Name: <span class="hlt-txt">*</span></strong>
+                    </th>
+                    <td class="auto-style2">
+                        <asp:DropDownList ID="ddSkillname" CssClass="myInput" runat="server" Width="175px" TabIndex="4" AutoPostBack="true" OnSelectedIndexChanged="ddSkillName_SelectedIndexChanged"></asp:DropDownList>
+                    </td> 
+                </tr>
+                
+                <tr>
+                    <td class="auto-style2" colspan="2" align="right" style="padding: 2px;">
+                        <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="myInput" Width="80px"
+                            TabIndex="19" OnClick="btnAdd_Click"></asp:Button>
+                    </td>
+                    <td class="auto-style2" style="padding: 2px;">
+                        <asp:Button ID="btnTrainingClear" runat="server" Text="Clear" CssClass="myInput" Width="80px"
+                            TabIndex="20" OnClick="btnTrainingClear_Click"></asp:Button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:GridView ID="gv" runat="server" AutoGenerateSelectButton="false" AutoGenerateEditButton="false"  AutoGenerateDeleteButton="true" OnSelectedIndexChanged="GV_SelectedIndexChanged" AutoGenerateColumns="false"
+                            OnPageIndexChanging="OnPageIndexChanging" AllowPaging="true" PageSize="100" GridLines="Both" HeaderStyle-BorderStyle="Solid" TabIndex="21"
+                            HeaderStyle-BackColor="#9AD6ED" AlternatingRowStyle-BackColor="WhiteSmoke" RowStyle-BorderStyle="Solid" BorderStyle="Solid" FooterStyle-BorderStyle="Solid"
+                             OnRowDataBound="OnRowDataBound"  OnRowDeleting="OnRowDeleting" 
+                            HeaderStyle-Height="50px" Width="180%" HeaderStyle-ForeColor="#636363">
+                            <Columns>
+                                <asp:BoundField DataField="SkillID" HeaderText="Skill ID" />
+                                <asp:BoundField DataField="SkillName" HeaderText="Skill Name" />                                                            
+                            </Columns>
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td class="auto-style2" colspan="3" align="center">
+                        <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="myInput"
+                            TabIndex="12" OnClick="btnSave_Click"></asp:Button>
+                        <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="myInput"
+                            TabIndex="13" OnClick="btnClear_Click"></asp:Button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2" colspan="3" align="center">
+                        <asp:Label ID="lblmsg" runat="server" Text=""></asp:Label></td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+    <%--</asp:Panel>--%>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="FooterContent" runat="server">
+</asp:Content>

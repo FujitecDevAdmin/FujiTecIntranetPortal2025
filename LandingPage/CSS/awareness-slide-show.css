@@ -1,0 +1,127 @@
+﻿
+.awareness-container {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.awareness-images {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.awareness-image-number {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    z-index: 1;
+}
+
+.awareness-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.awareness-description-portion {
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-weight: 300;
+    background: rgba(5, 1, 1, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(3, 3, 3, 0.37);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.awareness-image-description {
+    color: #f1f1f1;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.awareness-navigation-container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 2px auto;
+}
+
+.awareness-navigation-btn {
+    font-size: 17px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #dddada;
+    margin: 0 10px;
+    transition: transform 0.1s ease;
+    margin: 0;
+}
+
+    .awareness-navigation-btn:hover {
+        color: #d12232;
+        transform: scale(1.3);
+        background-color: rgba(92, 91, 91, 0.25);
+        border-radius: 95px;
+        width: 25px;
+        height: 25px;
+    }
+
+.awareness-prev-btn {
+    margin-right: 18px;
+}
+
+.awareness-next-btn {
+    margin-left: 18px;
+}
+
+.awareness-dot-container {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.awareness-dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+    .awareness-dot.active {
+        background-color: #d12232;
+        height: 10px;
+        width: 10px;
+    }

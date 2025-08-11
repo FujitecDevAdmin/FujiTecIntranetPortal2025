@@ -1,0 +1,134 @@
+﻿.employee-contact-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 85vh;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    border-radius: 12px;
+    background-image: url("/LandingPage/Resource/employee_contact_bg.png");
+    background-size: cover;
+}
+
+.employee-contact-title {
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: 550;
+    font-family: Roboto;
+    color: #1f1e1e;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+.select-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 40%;
+    width: 80%;
+    justify-content: space-around;
+}
+
+label {
+    font-size: 16px;
+}
+
+.select-box {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.select-containers .select-box:last-child {
+    margin-bottom: 5px;
+}
+
+.select-box label {
+    margin-right: 10px;
+    min-width: 100px;
+    width: 100%;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.select-box select,
+.select-box input[type="text"] {
+    min-width: 150px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 120%;
+    font-size: 14px;
+}
+
+.select-box .select .span {
+    font-size: 15px;
+    font-family: Roboto;
+}
+
+
+/* Background color for the table */
+.table-wrapper {
+    flex: 1;
+    height: 60%;   
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    background: #f0f0f0;
+    font-size: 12px;
+    margin: 10px auto;
+    margin-bottom: 0;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+    .table-wrapper::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 25px;
+    }
+
+    .table-wrapper::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 25px;
+    }
+
+    .table-wrapper::-webkit-scrollbar-track {
+        background-color: #f5f5f5;
+        border-radius: 5px;
+    }
+
+
+#employeeTable {
+    width: 100%;  
+    table-layout: fixed;
+    border-collapse: collapse;  
+}
+
+    #employeeTable thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #employeeTable tbody td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        white-space: pre-wrap;
+        width: calc(100% / 3);
+    }
+

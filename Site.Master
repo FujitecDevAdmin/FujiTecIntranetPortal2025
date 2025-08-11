@@ -1,0 +1,318 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FujiTecIntranetPortal.Site" %>
+
+<%--<!DOCTYPE html>
+
+<html>--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" id="main-page">
+<head runat="server">
+    <title>Fujitec Intranet Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/assets/css/line-awesome.min.css" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/assets/css/style.css" type="text/css" media="screen" />
+    <style type="text/css">
+        .main-menu1, .login-btn .btn-icons:hover {
+            background-color: #79e239 !important;
+            width: 100% !important;
+        }
+
+        .colr {
+            background-color: #FFFFFF !important;
+        }
+
+        .ParentMenu {
+            width: 100%;
+            /* background-color: #8AE0F2;
+           color: #000;*/
+            /* width: 100px;*/
+            color: #333;
+            text-align: center;
+            height: 20px;
+            line-height: 15px;
+            margin-right: 5px;
+            padding: 4px;
+        }
+
+        .ChildMenu {
+            padding: 3px;
+            margin-block-start: 2px;
+            margin-left: 10px;
+            font-family: Verdana;
+            /* margin: 10px 0px 1px 5px;*/
+            /* line-height: 20px;
+              height: 25px;
+              text-align: center;*/
+            /* color: #fff;*/
+            /*  text-align: center;
+            height: 25px;
+            line-height: 10px;
+            margin-top: 25px;*/
+        }
+
+        /*  .ParentMenu:hover {
+                width: 100%;
+                width: 100px;
+                color: #333;
+                text-align: center;
+                height: 18px;
+                line-height: 18px;
+                margin-right: 7px;
+            }
+*/
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+            height: 2.5%;
+        }
+
+        .main_menu {
+            width: 100px;
+            display: block;
+            /*  background-color: #8AE0F2;
+            color: #333;
+            text-align: center;
+            height: 10px;
+            line-height: 10px;*/
+            margin-right: 5px;
+            background-color: cornflowerblue !important;
+        }
+
+        .level_menu {
+            width: 110px;
+            background-color: #CF2331;
+            color: black;
+            text-align: center;
+            height: 13px;
+            line-height: 15px;
+            margin-top: 10px;
+            margin-right: 5px;
+            /*display: block;
+            background: #CF2331;*/
+            border: double;
+            font-family: Verdana;
+        }
+
+        .level_menu1 {
+            width: 110px;
+            color: #fff;
+            text-align: center;
+            height: 5px;
+            line-height: 15px;
+            margin-top: 5px;
+            font-family: Verdana;
+        }
+
+        .selected {
+            /*background-color: #852B91;*/
+            color: #fff;
+        }
+
+        .ddlList {
+            padding: 5px; /* padding between the border of the drop down and the items */
+            color: #fff;
+            height: 5px;
+        }
+        /* .ParentMenu:hover {
+            background-color: #ccc;
+        }*/
+
+        p {
+            background-color: #CF2331;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script runat="server">
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server" defaultbutton="btndefault">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 ">
+                        <img src="../assets/images/FujitecLogo.jpg" height="36" width="130" alt="" />
+                    </div>
+                    <div class="col-md-8 text-center ">
+                        <%--<h2 style="font-family:Verdana">CONFLUENCE</h2>--%>
+                        <img src="../assets/images/1.png" height="40" width="250" alt="" />
+                    </div>
+                    <div class="col-md-2  text-right">
+                        <img src="../assets/images/BigRiseLogo.jpg" height="35" width="120" alt="" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <%--<div class="main-menu">--%>
+        <div class="main-menu" style="background-color: #CF2331 !important;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9">
+
+                        <asp:Menu ID="Menu1" Orientation="Horizontal" runat="server" ForeColor="White" Font-Names="KABEL" Font-Size="1.5em"
+                            EnableShadows="true" DynamicHorizontalOffset="3" DisappearAfter="100"
+                            ShowToggleHandle="true" StaticEnableDefaultPopOutImage="false" OnMenuItemClick="Menu1_MenuItemClick">
+
+                            <StaticHoverStyle Font-Bold="true" />
+                            <StaticMenuItemStyle BorderColor="White" BorderStyle="Solid" BorderWidth="1px" />
+                            <DynamicMenuItemStyle BackColor="#990000" ForeColor="White" />
+                            <DynamicHoverStyle BackColor="YellowGreen" ForeColor="Black" />
+
+                            <LevelMenuItemStyles>
+                                <asp:MenuItemStyle CssClass="level_menu" />
+                                <asp:MenuItemStyle CssClass="ChildMenu" Font-Size="1.3em" />
+                                <asp:MenuItemStyle CssClass="ChildMenu" Font-Size="1.3em" />
+                            </LevelMenuItemStyles>
+
+                            <Items>                               
+                                <asp:MenuItem Text="Home"  NavigateUrl="~/Home.aspx" />                                        
+
+                                
+                                <asp:MenuItem Text="Application">
+                                    <asp:MenuItem Text="Visitor Appointment" />
+                                    <asp:MenuItem Text="Meeting Room Booking" />
+                                    <asp:MenuItem Text="Equipment Estimation Breakup" />
+                                    <asp:MenuItem Text="New Joiners Registration" NavigateUrl="~/EmployeeRegistration.aspx" />
+                                    <asp:MenuItem Text="News & Events Registration" NavigateUrl="~/NewsEvents.aspx" />
+                                    <asp:MenuItem Text="Approval For News & Events" NavigateUrl="~/ApprovalScreen.aspx" />
+                                    <asp:MenuItem Text="Car/Hoistway Drawing Tool" NavigateUrl="http://dwg.fujitecindia.com:8084/" Target="_blank" />
+                                    
+                                    <%--<asp:MenuItem Text="Master"> </asp:MenuItem>--%>
+                                        <asp:MenuItem Text="Employee Master" NavigateUrl="~/Master/EmployeeMaster.aspx" />
+                                        <asp:MenuItem Text="Department Master" NavigateUrl="~/Master/DepartmentMaster.aspx" />
+                                        <asp:MenuItem Text="Designation Master" NavigateUrl="~/Master/DesignationMaster.aspx" />
+                                        <asp:MenuItem Text="Skill Master" NavigateUrl="~/Master/SkillMappingMaster.aspx" />
+                                        <asp:MenuItem Text="Skill Mapping Master" NavigateUrl="~/Master/SkillGoalMapping.aspx" />                                   
+                                    
+                                    <asp:MenuItem Text="Sub Contractor Role Master" NavigateUrl="~/Training_Tracking/SubconRoleMaster.aspx" />
+                                    <asp:MenuItem Text="Sub Contractor Registration" NavigateUrl="~/Training_Tracking/SubConRegistration.aspx" />
+                                    <asp:MenuItem Text="Sub Contractor Approval" NavigateUrl="~/Training_Tracking/SubconVendorApproval.aspx" />
+                                    <asp:MenuItem Text="Sub Contractor Report" NavigateUrl="~/Training_Tracking/SubConRegReport.aspx" />
+                                    <asp:MenuItem Text="SubCon Training Tracking Report" NavigateUrl="~/Training_Tracking/TrainingTrackingReport.aspx" />
+                                    <asp:MenuItem Text="Vendor Master" NavigateUrl="~/Training_Tracking/VendorMaster.aspx" />
+                                    <asp:MenuItem Text="Sub-Con Employee Master" NavigateUrl="~/Training_Tracking/SubConEmployeeMaster.aspx" />
+                                    <asp:MenuItem Text="Training Category Master" NavigateUrl="~/Training_Tracking/TrainingCategoryMaster.aspx" />
+                                    <asp:MenuItem Text="Safety Training & Tracking" NavigateUrl="~/Training_Tracking/TrainingandTracking.aspx" />
+                                    <asp:MenuItem Text="Safety Certification" NavigateUrl="~/Training_Tracking/SubconCertification.aspx" />
+
+                                    
+                                   <%-- <asp:MenuItem Text="Safety Statistics"> </asp:MenuItem>--%>
+                                        <asp:MenuItem Text="Safety Policy" NavigateUrl="~/Safety.aspx" />
+                                        <asp:MenuItem Text="Safety Accident Statistics" NavigateUrl="~/SafetySTBT.aspx" />
+                                   
+
+                                    <asp:MenuItem Text="Training" NavigateUrl="~/TrainingApp.aspx" />
+                                    <asp:MenuItem Text="Skill Assessment" NavigateUrl="~/SkillAssesment/SkillAssessment.aspx" />
+                                    <asp:MenuItem Text="Skill TNA" NavigateUrl="~/SkillAssesment/TNA.aspx" />
+                                    <asp:MenuItem Text="Skill Assessment Report" NavigateUrl="~/SkillAssesment/SkillAssessmentReport.aspx" />
+                                    <asp:MenuItem Text="SalesPro Hub" NavigateUrl="~/BusinessSupport.aspx" />
+                                </asp:MenuItem>
+                                
+                                <asp:MenuItem Text="Workspace">
+                                    <asp:MenuItem Text="MIS - Inventory Reports" NavigateUrl="~/MISReports/InventoryReport.aspx" />
+                                    <asp:MenuItem Text="MIS - Dashboard Reports" NavigateUrl="~/MISReports/DashboardDeliveryEquipmentRpt.aspx" />
+                                    <asp:MenuItem Text="MIS - Closed Margin Reports" NavigateUrl="~/MISReports/ClosedMargin.aspx" />
+                                    <asp:MenuItem Text="Engineering" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Fod Site" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Fod Service" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="PowerBI Service" NavigateUrl="~/ServiceEmailPowerBISetup.aspx" />
+                                    <asp:MenuItem Text="Purchase" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Production" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Sales" NavigateUrl="~/UnderConstruction.aspx" />
+                                </asp:MenuItem>
+                                
+                                <asp:MenuItem Text="Timesheet">
+                                    <asp:MenuItem Text="Area Master" NavigateUrl="~/TIMESHEET/AreaMaster.aspx" />
+                                    <asp:MenuItem Text="Task Master" NavigateUrl="~/TIMESHEET/TaskMaster.aspx" />
+                                    <asp:MenuItem Text="TaskType Master" NavigateUrl="~/TIMESHEET/TaskTypeMaster.aspx" />
+                                    <asp:MenuItem Text="Product Master" NavigateUrl="~/TIMESHEET/ProductStandardHoursMaster.aspx" />
+                                    <asp:MenuItem Text="Schedule" NavigateUrl="~/TIMESHEET/SchedulingScreen.aspx" />
+                                    <asp:MenuItem Text="Schedule Upload" NavigateUrl="~/TIMESHEET/TimeSheetUploadSchedule.aspx" />
+                                    <asp:MenuItem Text="Timesheet" NavigateUrl="~/TIMESHEET/TimeSheetList.aspx" />
+                                    <asp:MenuItem Text="Timesheet Reports" NavigateUrl="~/TIMESHEET/TimesheetReport.aspx" />
+                                    <asp:MenuItem Text="Business Support Upload" NavigateUrl="~/TIMESHEET/BusinessSupport.aspx" />
+                                    <asp:MenuItem Text="BS Timesheet" NavigateUrl="~/TIMESHEET/BSTimesheet.aspx" />
+                                    <asp:MenuItem Text="BS Timesheet Report" NavigateUrl="~/TIMESHEET/BSTimesheetReport.aspx" />
+                                    <asp:MenuItem Text="Workspace Reservation" NavigateUrl="~/TIMESHEET/HybridModel.aspx" />
+                                    <asp:MenuItem Text="Workspace Reservation Report" NavigateUrl="~/TIMESHEET/HybridReport.aspx" />
+                                </asp:MenuItem>
+                                
+                                <asp:MenuItem Text="Induction">
+                                    <asp:MenuItem Text="Fod Site" NavigateUrl="~/Induction/FODSite.aspx" />
+                                    <asp:MenuItem Text="Fod Service" NavigateUrl="~/Induction/FODServices.aspx" />
+                                    <asp:MenuItem Text="Human Resource" NavigateUrl="~/Induction/HRInduction.aspx" />
+                                    <asp:MenuItem Text="Information Technology" NavigateUrl="~/Induction/ITInduction.aspx" />
+                                    <asp:MenuItem Text="Safety Induction" NavigateUrl="~/Induction/SafetyInduction.aspx" />
+                                    <asp:MenuItem Text="Planning" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Purchase" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Production" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Sales" NavigateUrl="~/UnderConstruction.aspx" />
+                                    <asp:MenuItem Text="Upload" NavigateUrl="~/UploadScreens/Awareness.aspx" />
+                                </asp:MenuItem>
+                                
+                                <asp:MenuItem Text="Contacts" NavigateUrl="~/AboutUs.aspx" />
+                                <asp:MenuItem Text="IT Support" NavigateUrl="~/ContactUs.aspx" />
+                                
+                                <asp:MenuItem Text="Security">
+                                    <asp:MenuItem Text="User Creation" NavigateUrl="~/Admin/UserCreation.aspx" />
+                                    <asp:MenuItem Text="Roles" NavigateUrl="~/Admin/Roles.aspx" />
+                                </asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+
+                    </div>
+                    <div class="col-md-3 text-right level_menu1">
+                        <%--<asp:Button ID="rbtnLogOut" runat="server" OnClick="btnLogOut_Click" Text="Logout" BackColor="#CF2331" Font-Bold="true" ForeColor="White"  Width="100px" Height="30px" Visible="true" Uicon></asp:Button>--%>
+                        <b>
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/assets/images/Uicon.jpg" Width="30px" Height="30px" OnClick="btnLogOut_Click" UseSubmitBehavior="false" Visible="false" /></b>
+                        <b>WELCOME:<asp:Label ID="lblusername" runat="server" Text="" ForeColor="White" Font-Bold="true" Font-Size="Small" Font-Names="verdana"></asp:Label>
+                            <b class="ddlList">
+                                <asp:DropDownList ID="DDOption" CssClass="myInput" runat="server" Width="20px" TabIndex="3" AutoPostBack="true" OnSelectedIndexChanged="DDOption_SelectedIndexChanged">
+                                    <asp:ListItem Text="" Value="0" style="background-color: white !important; font-size: 0px; color: black;"></asp:ListItem>
+                                    <asp:ListItem Text="CHANGE PASSWORD" Value="CP" style="background-color: white !important; font-size: small; color: black; font-family: Verdana; border: solid; border-block-end: solid; padding: 5px 15px 15px 15px;"></asp:ListItem>
+                                    <asp:ListItem Text="LOGOUT" Value="LG" style="background-color: white !important; font-size: small; color: black; font-family: Verdana; border: solid; border-block-end: solid; padding: 5px 15px 15px 15px;"></asp:ListItem>
+                                </asp:DropDownList></b></b>
+                        <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/assets/images/Logout.jpg" Width="25px" Height="22px" OnClick="btnLogOut_Click" UseSubmitBehavior="false" visible="true"/>--%>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <asp:Button ID="btndefault" runat="server" Text="" OnClick="btndefault_Click" visibile="false" />
+        <div>
+            <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/accordion-menu.js"></script>
+    <script type="text/javascript" src="../assets/js/common.js"></script>
+    <script type="text/javascript" src="../assets/js/WebCam.js"></script>
+    <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+        <div class="footer">
+            <p style="text-align: left; color: white">
+                <strong>Developed by Information Technology.
+    <span style="float: right; color: white">© 2022 Fujitec India Pvt,Ltd.
+    </span>
+                </strong>
+            </p>
+        </div>
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

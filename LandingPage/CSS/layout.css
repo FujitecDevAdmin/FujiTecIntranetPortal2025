@@ -1,0 +1,203 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+    scroll-behavior: smooth;
+    margin: 0;
+    height: 100vh;
+    min-height: 100vh;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 999;
+}
+
+
+.section {
+    min-height: calc(100vh - 50px);
+    min-width: calc(100vw - 50px);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border-bottom: 1px solid #ccc;
+    scroll-margin-top: 50px;
+}
+
+#section1 .container {
+    min-height: calc(100vh - 50px);
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    /*background-color: orange;*/
+    /*border: 2px solid red;*/
+    background-image: url("/LandingPage/Resource/section1_bg.png");
+    background-size: cover; /* You can add this line to ensure the background covers the entire container */
+}
+
+
+#section2 .column {
+    width: 35%;
+    min-height: calc(100vh - 100px);
+    margin-right: 0px;
+    /*background-color: lightblue;*/
+    /*border: 1px solid blue;*/
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+    #section2 .column:nth-child(2) {
+        width: 35%;
+    }
+
+    #section2 .column:last-child {
+        width: 35%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+
+#section3 .column-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#section3 {
+    background-image: url("/LandingPage/Resource/section3_bg.png");
+    background-size: cover;
+}
+
+    #section3 .column {
+        width: 60%;
+        min-height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color:yellow;*/
+        margin: 20px;
+    }
+
+        #section3 .column:last-child {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 0px;
+        }
+
+        #section3 .column .row {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            min-height: 50%;
+            justify-content: space-around;
+            position: relative;
+            /*   background-color:red;  */
+        }
+
+            #section3 .column .row:last-child {
+            }
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .section {
+        font-size: 1.5em;
+    }
+
+    #section2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+        #section2 .column {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+            background-color: red;
+        }
+
+            #section2 .column:nth-child(2) {
+                width: 100%;
+            }
+
+            #section2 .column:last-child {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+
+    #section3 .column-layout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    #section3 .column {
+        width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin: 20px;
+    }
+
+        #section3 .column:last-child {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: red;
+        }
+
+    #section3 .row {
+        width: 100%;
+        height: 100vh;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: red;
+    }
+
+        #section3 .row:last-child {
+            margin-bottom: 20px;
+        }
+}

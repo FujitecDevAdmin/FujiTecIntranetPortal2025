@@ -1,0 +1,123 @@
+﻿
+.quicklinks::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+.quicklinks::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    background: transparent;
+}
+
+.quicklinks::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.quicklinks {
+    max-width: 15%;
+    height: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: linear-gradient(to right, #4a90e2, #4169e1); /* Gradient background */
+    padding-top: 15px;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: height 0.3s ease;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+
+    .quicklinks:hover {
+        max-width: 90%;
+        height: 125px;
+        overflow-x: auto;
+        background: #747F74;
+        border-radius: 12px;
+    }
+
+
+.quicklinks-title {
+    margin-top: -15px;
+    text-align: center;
+    position: relative;
+    /*to be change*/
+    font-weight: bold;
+    font-style: italic;
+    font-family: Raleway;
+}
+
+    .quicklinks-title span {
+        position: relative;
+        display: inline-block;
+        font-size: 15px;
+        color: #fff;
+        text-transform: uppercase;
+        animation: flip 3s infinite;
+        animation-delay: calc(.2s * var(--i))
+    }
+
+@keyframes flip {
+    0%,80% {
+        transform: rotateY(360deg)
+    }
+}
+
+
+.quicklinks-tray {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+    .quicklinks-tray a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        padding: 0px;
+        margin: 0 10px;
+        transition: background-color 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+        .quicklinks-tray a:hover {
+            transform: translateY(-10px);
+        }
+
+.quicklinks-card-link {
+    text-decoration: none;
+}
+
+.quicklinks-card {
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    object-fit: contain;
+}
+
+
+    .quicklinks-card img {
+        margin-bottom: 0px;
+        object-fit: contain;
+    }
+
+    .quicklinks-card p {
+        text-align: center;
+        margin: 0;
+        font-weight: bold;
+        display: none;
+    }

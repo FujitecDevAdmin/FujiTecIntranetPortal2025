@@ -1,0 +1,28 @@
+﻿/* Styles for the site navigation circles */
+.site-navigation {
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    padding: 3px 2px;
+    background-color: #F0F0F0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+    .circle:last-child {
+        margin-bottom: 0px;
+    }
+
+    .circle.active {
+        background-color: #ff0000; /* Change to your desired active color */
+    }

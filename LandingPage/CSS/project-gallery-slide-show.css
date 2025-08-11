@@ -1,0 +1,112 @@
+﻿.project-gallery-container {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-gallery-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+}
+
+    .project-gallery-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+.project-gallery-description-portion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%; /* Adjust the height as needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.project-gallery-project-name,
+.project-gallery-project-location,
+.project-gallery-project-description {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+
+.project-gallery-navigation-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.project-gallery-navigation-btn {
+    font-size: 17px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #dddada;
+    margin: 0 10px;
+    transition: transform 0.1s ease;
+    margin: 0;
+}
+
+    .project-gallery-navigation-btn:hover {
+        color: #d12232;
+        transform: scale(1.3);
+        background-color: rgba(92, 91, 91, 0.25);
+        border-radius: 95px;
+        width: 25px;
+        height: 25px;
+    }
+
+.project-gallery-prev-btn {
+    margin-right: 18px;
+}
+
+.project-gallery-next-btn {
+    margin-left: 18px;
+}
+
+.project-gallery-dot-container {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.project-gallery-dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: #cccccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+    .project-gallery-dot.active {
+        background-color: #d12232;
+        height: 10px;
+        width: 10px;
+    }
+
+.project-gallery-image-number {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}

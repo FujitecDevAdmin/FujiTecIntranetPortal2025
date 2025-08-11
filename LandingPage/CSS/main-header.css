@@ -1,0 +1,189 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    background: rgba(247, 247, 247, 1); /* Adjusted the background color and transparency */
+    box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.12); /* Modified the box shadow for a softer look */
+    border: none; /* Removed the border */
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+}
+
+.separator {
+    border-left: 1px solid #000;
+    margin: 0 15px;
+    height: 40px;
+}
+
+.app-name {
+    font-size: 1.3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-image: linear-gradient( -225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100% );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+.marquee {
+    margin: 0 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #D94C59;
+}
+
+    .marquee marquee {
+        display: inline-block;
+        /*animation: glowAnimation 2s ease-in-out infinite alternate;*/
+    }
+
+@keyframes glowAnimation {
+    0% {
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700;
+    }
+}
+
+.login-btn {
+    height: 30px;
+    padding: 8px 15px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    background-color: #d12232;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 50px; /* Allow the width to adjust based on content */
+}
+
+    .login-btn:hover {
+        transform: scale(1.1);
+    }
+
+
+
+.bottom-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    .main-header {
+        height: 30px;
+    }
+
+    .logo-img {
+        width: 70px;
+    }
+
+    .app-name {
+        font-size: 0.8em;
+        margin-left: 5px;
+    }
+
+    .login-btn {
+        height: 20px;
+        padding: 2px;
+        font-size: 0.7em;
+        width: 50px;
+    }
+
+    .separator {
+        border-left: 1px solid #000;
+        margin: 0 15px;
+        height: 15px;
+    }
+}
+
+/* For screens larger than 768px */
+@media screen and (min-width: 769px) {
+    .main-header {
+        height: 50px;
+    }
+
+    .logo-img {
+        width: 100px;
+        margin-top: 8px;
+    }
+
+    .app-name {
+        font-size: 1.5em;
+        font-weight: 800;
+        margin-left: 4px;
+        margin-top: 0px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        background-image: linear-gradient( -225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100% );
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 4s linear infinite;
+        display: inline-block;
+    }
+
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    .login-btn {
+        height: 30px;
+        padding: 8px;
+        width: 100px;
+    }
+
+    .separator {
+        border-left: 1px solid #000;
+        margin: 0 15px;
+        height: 40px;
+    }
+}

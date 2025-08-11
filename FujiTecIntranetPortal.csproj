@@ -1,0 +1,2282 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB3F166C-2441-4A7B-AB18-5D1D512E4446}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FujiTecIntranetPortal</RootNamespace>
+    <AssemblyName>FujiTecIntranetPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44320</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.15.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.15.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.DocIO.AspNet.20.3.0.59\lib\net46\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.EJ, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Web.Base.20.3.0.59\lib\net46\Syncfusion.EJ.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.EJ.Export, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Web.Base.20.3.0.59\lib\net46\Syncfusion.EJ.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.20.3.0.59\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Linq.Base, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Web.Base.20.3.0.59\lib\net46\Syncfusion.Linq.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Pdf.AspNet.20.3.0.59\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Presentation.Base, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Presentation.AspNet.20.3.0.59\lib\net46\Syncfusion.Presentation.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=20.3460.0.59, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.XlsIO.AspNet.20.3.0.59\lib\net46\Syncfusion.XlsIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="Admin\Roles.aspx" />
+    <Content Include="Admin\UserCreation.aspx" />
+    <Content Include="ApprovalPopup.aspx" />
+    <Content Include="ApprovalScreen.aspx" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\line-awesome.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\la-brands-400.svg" />
+    <Content Include="assets\fonts\la-regular-400.svg" />
+    <Content Include="assets\fonts\la-solid-900.svg" />
+    <Content Include="assets\images\BigRiseLogo.jpg" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\FujiAboutus.png" />
+    <Content Include="assets\images\FujitecLogo.jpg" />
+    <Content Include="assets\images\img-sprite.png" />
+    <Content Include="assets\images\no-network.png" />
+    <Content Include="assets\images\under-construction.png" />
+    <Content Include="assets\js\accordion-menu.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\common.js" />
+    <Content Include="assets\js\daterangepicker.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\WebCam.js" />
+    <Content Include="assets\style_backup.css" />
+    <Content Include="assets\style_backup_20210426.css" />
+    <Content Include="BusinessSupport.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Content\admin.jpg" />
+    <Content Include="Content\adminb.jpg" />
+    <Content Include="Content\adminbotton1.jpg" />
+    <Content Include="Content\adminbutton.jpg" />
+    <Content Include="Content\adminbutton.jpg.jfif" />
+    <Content Include="Content\Banner.jpg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dms.jpg" />
+    <Content Include="Content\download.jpg" />
+    <Content Include="Content\ej\mobile\android-theme\ej.mobile.android-core.css" />
+    <Content Include="Content\ej\mobile\android-theme\ej.mobile.android-core.min.css" />
+    <Content Include="Content\ej\mobile\android-theme\ej.mobile.android.css" />
+    <Content Include="Content\ej\mobile\android-theme\ej.mobile.android.min.css" />
+    <Content Include="Content\ej\mobile\ej.mobile.all.css" />
+    <Content Include="Content\ej\mobile\ej.mobile.all.min.css" />
+    <Content Include="Content\ej\mobile\flat-theme\ej.mobile.flat-core.css" />
+    <Content Include="Content\ej\mobile\flat-theme\ej.mobile.flat-core.min.css" />
+    <Content Include="Content\ej\mobile\flat-theme\ej.mobile.flat-theme.css" />
+    <Content Include="Content\ej\mobile\flat-theme\ej.mobile.flat-theme.min.css" />
+    <Content Include="Content\ej\mobile\images\ejmmobilefonts.svg" />
+    <Content Include="Content\ej\mobile\images\PullToRefresh\PtR_android_dark.GIF" />
+    <Content Include="Content\ej\mobile\images\PullToRefresh\PtR_android_light.GIF" />
+    <Content Include="Content\ej\mobile\images\PullToRefresh\PtR_ios7_dark.gif" />
+    <Content Include="Content\ej\mobile\images\PullToRefresh\PtR_ios7_light.gif" />
+    <Content Include="Content\ej\mobile\images\PullToRefresh\PtR_windows.GIF" />
+    <Content Include="Content\ej\mobile\images\PullToRefresh\PtR_winrt.GIF" />
+    <Content Include="Content\ej\mobile\images\radialmenu\androidback.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\androidradial.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\flatback.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\flatradial.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\ios7back.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\ios7radial.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\windowsback.png" />
+    <Content Include="Content\ej\mobile\images\radialmenu\windowsradial.png" />
+    <Content Include="Content\ej\mobile\images\scrollpanel\pullarrow.png" />
+    <Content Include="Content\ej\mobile\images\scrollpanel\refreshing-ios-light.gif" />
+    <Content Include="Content\ej\mobile\images\waitingpopup\waitingpopup_android.GIF" />
+    <Content Include="Content\ej\mobile\images\waitingpopup\waitingpopup_ios7.gif" />
+    <Content Include="Content\ej\mobile\images\waitingpopup\waitingpopup_windows.GIF" />
+    <Content Include="Content\ej\mobile\images\waitingpopup\waitingpopup_winrt.GIF" />
+    <Content Include="Content\ej\mobile\ios7-theme\ej.mobile.ios7-core.css" />
+    <Content Include="Content\ej\mobile\ios7-theme\ej.mobile.ios7-core.min.css" />
+    <Content Include="Content\ej\mobile\ios7-theme\ej.mobile.ios7.css" />
+    <Content Include="Content\ej\mobile\ios7-theme\ej.mobile.ios7.min.css" />
+    <Content Include="Content\ej\mobile\windows-theme\ej.mobile.windows-core.css" />
+    <Content Include="Content\ej\mobile\windows-theme\ej.mobile.windows-core.min.css" />
+    <Content Include="Content\ej\mobile\windows-theme\ej.mobile.windows.css" />
+    <Content Include="Content\ej\mobile\windows-theme\ej.mobile.windows.min.css" />
+    <Content Include="Content\ej\web\bootstrap-theme\ej.theme.css" />
+    <Content Include="Content\ej\web\bootstrap-theme\ej.theme.min.css" />
+    <Content Include="Content\ej\web\bootstrap-theme\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\checkedtick.png" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\rating-star.png" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\slider-tick.png" />
+    <Content Include="Content\ej\web\bootstrap-theme\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\common-images\darktheme\colorpicker_dark.png" />
+    <Content Include="Content\ej\web\common-images\diagram\diagram_context.png" />
+    <Content Include="Content\ej\web\common-images\diagram\diagram_context1.png" />
+    <Content Include="Content\ej\web\common-images\diagram\Rotate.cur" />
+    <Content Include="Content\ej\web\common-images\documenteditor\cellbottomalignment.svg" />
+    <Content Include="Content\ej\web\common-images\documenteditor\cellcenteralignment.svg" />
+    <Content Include="Content\ej\web\common-images\documenteditor\celltopalignment.svg" />
+    <Content Include="Content\ej\web\common-images\documenteditor\tablecenteralignment.svg" />
+    <Content Include="Content\ej\web\common-images\documenteditor\tableleftalignment.svg" />
+    <Content Include="Content\ej\web\common-images\documenteditor\tablerightalignment.svg" />
+    <Content Include="Content\ej\web\common-images\ejicons.svg" />
+    <Content Include="Content\ej\web\common-images\fileexplorer\file_icons.png" />
+    <Content Include="Content\ej\web\common-images\grid\dropPointer.cur" />
+    <Content Include="Content\ej\web\common-images\kanban\nouser.svg" />
+    <Content Include="Content\ej\web\common-images\lighttheme\colorpicker_light.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Bootom.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Bootom_hover.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Left.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Left_hover.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Right.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Right_hover.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Top.png" />
+    <Content Include="Content\ej\web\common-images\maps\Arrow_Top_hover.png" />
+    <Content Include="Content\ej\web\common-images\maps\Bar.png" />
+    <Content Include="Content\ej\web\common-images\maps\Home.png" />
+    <Content Include="Content\ej\web\common-images\maps\Home_hover.png" />
+    <Content Include="Content\ej\web\common-images\maps\Home_hover_lime.png" />
+    <Content Include="Content\ej\web\common-images\maps\Home_hover_saffron.png" />
+    <Content Include="Content\ej\web\common-images\maps\Home_lime.png" />
+    <Content Include="Content\ej\web\common-images\maps\Home_saffron.png" />
+    <Content Include="Content\ej\web\common-images\maps\Navicatior.png" />
+    <Content Include="Content\ej\web\common-images\maps\Zoom-In.png" />
+    <Content Include="Content\ej\web\common-images\maps\Zoom-In_hover.png" />
+    <Content Include="Content\ej\web\common-images\maps\Zoom-out.png" />
+    <Content Include="Content\ej\web\common-images\maps\Zoom-out_hover.png" />
+    <Content Include="Content\ej\web\common-images\materialtheme\colorpicker_light_material.png" />
+    <Content Include="Content\ej\web\common-images\mediaplayer\basic_view_toolbar_bg.png" />
+    <Content Include="Content\ej\web\common-images\mediaplayer\header_bg.png" />
+    <Content Include="Content\ej\web\common-images\mediaplayer\thumbnail.png" />
+    <Content Include="Content\ej\web\common-images\mediaplayer\waiting_popup.gif" />
+    <Content Include="Content\ej\web\common-images\navigationdrawer\icons.svg" />
+    <Content Include="Content\ej\web\common-images\pdfviewer\preloader-pdfviewer.gif" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\circle.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\diamond.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\down-arrow.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\green.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\red.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\right-arrow.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\three-color.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\triangle.png" />
+    <Content Include="Content\ej\web\common-images\pivotgrid\up-arrow.png" />
+    <Content Include="Content\ej\web\common-images\radialmenu\back.png" />
+    <Content Include="Content\ej\web\common-images\radialmenu\radial.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Blank.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Browser.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Check.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Diet.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\ejrbnicons.svg" />
+    <Content Include="Content\ej\web\common-images\ribbon\gallery.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Gantt.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\homegallery.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\paste.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Project.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Protect.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\Sales.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\style.gallery.png" />
+    <Content Include="Content\ej\web\common-images\ribbon\User.jpg" />
+    <Content Include="Content\ej\web\common-images\ribbon\Version.png" />
+    <Content Include="Content\ej\web\common-images\schedule\schedule_priority.png" />
+    <Content Include="Content\ej\web\common-images\spellcheck\highlight.png" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\blank.png" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\bluedatabar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\bwrcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\chart-sprites.png" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\charttab-sprites.png" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\charttype-sprites.png" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\cross.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\downarrow.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\downtriangle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\down_arrow_dark.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\down_arrow_light.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\draw_border_dark.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\draw_border_grid_dark.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\draw_border_grid_light.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\draw_border_light.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\drystar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\ejxlicons.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\exclam.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\format_painter_dark.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\format_painter_light.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\fullstar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\greenarrow.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\greencircle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\greencircleindi.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\greendatabar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\greenflag.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\gwcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\gwrcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\gycolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\gyrcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\halfstar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\lightbluedatabar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\midarrow.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\midtriangle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\orangedatabar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\purpledatabar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\redarrow.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\redcircle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\redcircleindi.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\reddatabar.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\redflag.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\redsquare.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\right_arrow_dark.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\right_arrow_light.cur" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rimgreencircle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rimredcircle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rimyellowcircle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rwbcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rwcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rwgcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\rygcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\sprites.png" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\tick.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\uparrow.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\uptriangle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\wgcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\wrcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\yellowarrow.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\yellowcircle.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\yellowcircleindi.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\yellowflag.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\yellowtri.svg" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\ygcolorscale.svg" />
+    <Content Include="Content\ej\web\common-images\treeview\drop-sibling-rtl.png" />
+    <Content Include="Content\ej\web\default-theme\ej.theme.css" />
+    <Content Include="Content\ej\web\default-theme\ej.theme.min.css" />
+    <Content Include="Content\ej\web\default-theme\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\default-theme\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\default-theme\images\checkedtick.png" />
+    <Content Include="Content\ej\web\default-theme\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\default-theme\images\rating-star.png" />
+    <Content Include="Content\ej\web\default-theme\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\default-theme\images\slider-tick.png" />
+    <Content Include="Content\ej\web\default-theme\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\ej.widgets.core.bootstrap.min.css" />
+    <Content Include="Content\ej\web\ej.widgets.core.material.min.css" />
+    <Content Include="Content\ej\web\ej.widgets.core.min.css" />
+    <Content Include="Content\ej\web\ej.widgets.core.office-365.min.css" />
+    <Content Include="Content\ej\web\flat-azure-dark\ej.theme.css" />
+    <Content Include="Content\ej\web\flat-azure-dark\ej.theme.min.css" />
+    <Content Include="Content\ej\web\flat-azure-dark\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\checkedtick.png" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\rating-star.png" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\slider-tick.png" />
+    <Content Include="Content\ej\web\flat-azure-dark\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\flat-lime-dark\ej.theme.css" />
+    <Content Include="Content\ej\web\flat-lime-dark\ej.theme.min.css" />
+    <Content Include="Content\ej\web\flat-lime-dark\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\checkedtick.png" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\rating-star.png" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\slider-tick.png" />
+    <Content Include="Content\ej\web\flat-lime-dark\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\flat-lime\ej.theme.css" />
+    <Content Include="Content\ej\web\flat-lime\ej.theme.min.css" />
+    <Content Include="Content\ej\web\flat-lime\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\flat-lime\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\flat-lime\images\checkedtick.png" />
+    <Content Include="Content\ej\web\flat-lime\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\flat-lime\images\rating-star.png" />
+    <Content Include="Content\ej\web\flat-lime\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\flat-lime\images\slider-tick.png" />
+    <Content Include="Content\ej\web\flat-lime\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\flat-saffron-dark\ej.theme.css" />
+    <Content Include="Content\ej\web\flat-saffron-dark\ej.theme.min.css" />
+    <Content Include="Content\ej\web\flat-saffron-dark\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\checkedtick.png" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\rating-star.png" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\slider-tick.png" />
+    <Content Include="Content\ej\web\flat-saffron-dark\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\flat-saffron\ej.theme.css" />
+    <Content Include="Content\ej\web\flat-saffron\ej.theme.min.css" />
+    <Content Include="Content\ej\web\flat-saffron\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\flat-saffron\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\flat-saffron\images\checkedtick.png" />
+    <Content Include="Content\ej\web\flat-saffron\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\flat-saffron\images\rating-star.png" />
+    <Content Include="Content\ej\web\flat-saffron\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\flat-saffron\images\slider-tick.png" />
+    <Content Include="Content\ej\web\flat-saffron\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\gradient-azure-dark\ej.theme.css" />
+    <Content Include="Content\ej\web\gradient-azure-dark\ej.theme.min.css" />
+    <Content Include="Content\ej\web\gradient-azure-dark\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\checkedtick.png" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\rating-star.png" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\slider-tick.png" />
+    <Content Include="Content\ej\web\gradient-azure-dark\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\gradient-azure\ej.theme.css" />
+    <Content Include="Content\ej\web\gradient-azure\ej.theme.min.css" />
+    <Content Include="Content\ej\web\gradient-azure\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\gradient-azure\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\gradient-azure\images\checkedtick.png" />
+    <Content Include="Content\ej\web\gradient-azure\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\gradient-azure\images\rating-star.png" />
+    <Content Include="Content\ej\web\gradient-azure\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\gradient-azure\images\slider-tick.png" />
+    <Content Include="Content\ej\web\gradient-azure\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\gradient-lime-dark\ej.theme.css" />
+    <Content Include="Content\ej\web\gradient-lime-dark\ej.theme.min.css" />
+    <Content Include="Content\ej\web\gradient-lime-dark\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\checkedtick.png" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\rating-star.png" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\slider-tick.png" />
+    <Content Include="Content\ej\web\gradient-lime-dark\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\gradient-lime\ej.theme.css" />
+    <Content Include="Content\ej\web\gradient-lime\ej.theme.min.css" />
+    <Content Include="Content\ej\web\gradient-lime\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\gradient-lime\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\gradient-lime\images\checkedtick.png" />
+    <Content Include="Content\ej\web\gradient-lime\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\gradient-lime\images\rating-star.png" />
+    <Content Include="Content\ej\web\gradient-lime\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\gradient-lime\images\slider-tick.png" />
+    <Content Include="Content\ej\web\gradient-lime\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\ej.theme.css" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\ej.theme.min.css" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\checkedtick.png" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\rating-star.png" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\slider-tick.png" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\gradient-saffron\ej.theme.css" />
+    <Content Include="Content\ej\web\gradient-saffron\ej.theme.min.css" />
+    <Content Include="Content\ej\web\gradient-saffron\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\gradient-saffron\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\gradient-saffron\images\checkedtick.png" />
+    <Content Include="Content\ej\web\gradient-saffron\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\gradient-saffron\images\rating-star.png" />
+    <Content Include="Content\ej\web\gradient-saffron\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\gradient-saffron\images\slider-tick.png" />
+    <Content Include="Content\ej\web\gradient-saffron\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\high-contrast-01\ej.theme.css" />
+    <Content Include="Content\ej\web\high-contrast-01\ej.theme.min.css" />
+    <Content Include="Content\ej\web\high-contrast-01\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\high-contrast-01\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\high-contrast-01\images\checkedtick.png" />
+    <Content Include="Content\ej\web\high-contrast-01\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\high-contrast-01\images\rating-star.png" />
+    <Content Include="Content\ej\web\high-contrast-01\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\high-contrast-01\images\slider-tick.png" />
+    <Content Include="Content\ej\web\high-contrast-01\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\high-contrast-02\ej.theme.css" />
+    <Content Include="Content\ej\web\high-contrast-02\ej.theme.min.css" />
+    <Content Include="Content\ej\web\high-contrast-02\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\high-contrast-02\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\high-contrast-02\images\checkedtick.png" />
+    <Content Include="Content\ej\web\high-contrast-02\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\high-contrast-02\images\rating-star.png" />
+    <Content Include="Content\ej\web\high-contrast-02\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\high-contrast-02\images\slider-tick.png" />
+    <Content Include="Content\ej\web\high-contrast-02\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\material\ej.theme.css" />
+    <Content Include="Content\ej\web\material\ej.theme.min.css" />
+    <Content Include="Content\ej\web\material\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\material\icons\ejicons.svg" />
+    <Content Include="Content\ej\web\material\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\material\images\checkedtick.png" />
+    <Content Include="Content\ej\web\material\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\material\images\rating-star.png" />
+    <Content Include="Content\ej\web\material\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\material\images\slider-tick.png" />
+    <Content Include="Content\ej\web\material\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\office-365\ej.theme.css" />
+    <Content Include="Content\ej\web\office-365\ej.theme.min.css" />
+    <Content Include="Content\ej\web\office-365\ej.web.all.min.css" />
+    <Content Include="Content\ej\web\office-365\icons\ejicons.svg" />
+    <Content Include="Content\ej\web\office-365\images\ajax-loader.gif" />
+    <Content Include="Content\ej\web\office-365\images\checkedtick.png" />
+    <Content Include="Content\ej\web\office-365\images\drop-sibling.png" />
+    <Content Include="Content\ej\web\office-365\images\Rating_Active.png" />
+    <Content Include="Content\ej\web\office-365\images\Rating_Clear.png" />
+    <Content Include="Content\ej\web\office-365\images\Rating_Default.png" />
+    <Content Include="Content\ej\web\office-365\images\rotator-icon.png" />
+    <Content Include="Content\ej\web\office-365\images\slider-tick.png" />
+    <Content Include="Content\ej\web\office-365\images\waitingpopup.gif" />
+    <Content Include="Content\ej\web\responsive-css\ej.responsive.css" />
+    <Content Include="Content\ej\web\responsive-css\ejgrid.responsive.css" />
+    <Content Include="Content\ej\web\ribbon-css\ej.icons.css" />
+    <Content Include="Content\electric.jpg" />
+    <Content Include="Content\enggbutton.jpg" />
+    <Content Include="Content\epl.jpg" />
+    <Content Include="Content\factory.jpg" />
+    <Content Include="Content\Fujitec.jpg" />
+    <Content Include="Content\Fujitec.mp4" />
+    <Content Include="Content\Fujitecindia.jpg" />
+    <Content Include="Content\GoogleWorkspace.jpg" />
+    <Content Include="Content\Hrmantra.jpg" />
+    <Content Include="Content\HRMANTRA_V.jpg" />
+    <Content Include="Content\HRMANTRA_V1.jpg" />
+    <Content Include="Content\images.jpg" />
+    <Content Include="Content\image\angler-products.jpg" />
+    <Content Include="Content\image\BigRise Logo.jpg" />
+    <Content Include="Content\image\BigRise.png" />
+    <Content Include="Content\image\Dms.png" />
+    <Content Include="Content\image\ERP.png" />
+    <Content Include="Content\image\GoogleWorkspace_V.jpg" />
+    <Content Include="Content\image\GWorkspace2.png" />
+    <Content Include="Content\image\Hrmantra.png" />
+    <Content Include="Content\image\HRMANTRA_V.jpg" />
+    <Content Include="Content\image\HRMANTRA_V1.jpg" />
+    <Content Include="Content\image\Intranet.png" />
+    <Content Include="Content\image\Intranet_J.png" />
+    <Content Include="Content\image\Itintra.png" />
+    <Content Include="Content\image\Itsupport.png" />
+    <Content Include="Content\image\Logo.jpg" />
+    <Content Include="Content\image\office365.png" />
+    <Content Include="Content\image\Shakir.png" />
+    <Content Include="Content\image\Vendora.jfif" />
+    <Content Include="Content\image\Vendora.png" />
+    <Content Include="Content\image\Vendora1.png" />
+    <Content Include="Content\image\Vendora2.PNG" />
+    <Content Include="Content\image\Workspace.png" />
+    <Content Include="Content\image\Workspace1.png" />
+    <Content Include="Content\IT.jpg" />
+    <Content Include="Content\itbutton.jpg" />
+    <Content Include="Content\Itsupport.jpg" />
+    <Content Include="Content\Logo.jpg" />
+    <Content Include="Content\Logo.jsp.jpg" />
+    <Content Include="Content\logo1.jpg" />
+    <Content Include="Content\mech.jpg" />
+    <Content Include="Content\office365.jpg" />
+    <Content Include="Content\Pageformate.js" />
+    <Content Include="Content\Production.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\str.jpg" />
+    <Content Include="Content\Str1.jpg" />
+    <Content Include="Content\str2.jpg" />
+    <Content Include="Content\str3.gif" />
+    <Content Include="Content\Tecky.jpg" />
+    <Content Include="Content\Teckyword.jpg" />
+    <Content Include="EmployeeRegistration.aspx" />
+    <Content Include="EmployeeRegistrationPopup.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Induction\EngineeringInduction.aspx" />
+    <Content Include="Induction\FinanceInduction.aspx" />
+    <Content Include="Induction\FODServices.aspx" />
+    <Content Include="Induction\FODSite.aspx" />
+    <Content Include="Induction\HRInduction.aspx" />
+    <Content Include="Induction\ITInduction.aspx" />
+    <Content Include="Induction\PlanningInduction.aspx" />
+    <Content Include="Induction\ProductionInduction.aspx" />
+    <Content Include="Induction\PurchaseInduction.aspx" />
+    <Content Include="Induction\SafetyInduction.aspx" />
+    <Content Include="Induction\SalesInduction.aspx" />
+    <Content Include="IntranetPortalLogin.aspx" />
+    <Content Include="IntranetPortalNewLogin.aspx" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_01.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_02.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_03.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_04.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_05.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_06.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_07.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_08.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_09.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_10.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_11.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_12.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_13.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_14.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_15.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_16.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_17.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_18.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_19.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_20.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_21.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_22.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_23.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_24.jpg" />
+    <Content Include="IT_Awareness\31.03.2023\Security-Awareness-Training_25.jpg" />
+    <Content Include="IT_Awareness\Malware.PNG" />
+    <Content Include="IT_Awareness\Phishing.PNG" />
+    <Content Include="IT_Awareness\SocialEngineering.PNG" />
+    <Content Include="IT_Awareness\SQL_Injection.PNG" />
+    <Content Include="LandingPageResources\Awareness\AI1\20231230182459098-b8a04e48-ad47-42f2-8909-95ebc2970b8f.jpg" />
+    <Content Include="LandingPageResources\Awareness\AI2\20231230182528852-26353980-5a3d-4b7c-85c8-054850be0f2f.jpg" />
+    <Content Include="LandingPageResources\Awareness\AI\20231230182206435-6f103a49-81bb-4c34-b6de-78effcd7daf4.jpg" />
+    <Content Include="LandingPageResources\Awareness\GENERAL\20231229081923096-638394347630963622.jpg" />
+    <Content Include="LandingPageResources\Awareness\GENERAL\20231229082257047-49a515f5-89ea-425e-bd24-d3092440540e.jpg" />
+    <Content Include="LandingPageResources\Awareness\SECURITY\99125256-5776-4c40-b18b-a7ae5b5229aa.jpg" />
+    <Content Include="LandingPageResources\Awareness\SECURITY\dcf7da3f-8fe8-4c97-905c-3c901f8eb248.jpg" />
+    <Content Include="LandingPageResources\Employees\02021_Vinoth_Kumar_S.jpg" />
+    <Content Include="LandingPageResources\Employees\02078.jpg" />
+    <Content Include="LandingPageResources\Employees\02096.jpg" />
+    <Content Include="LandingPageResources\Employees\02097.jpg" />
+    <Content Include="LandingPageResources\Employees\02098.jpg" />
+    <Content Include="LandingPageResources\Employees\02103.jpg" />
+    <Content Include="LandingPageResources\Employees\02105.jpg" />
+    <Content Include="LandingPageResources\Employees\02131_Siddeswaran.S.jpg" />
+    <Content Include="LandingPageResources\Employees\02141.jpg" />
+    <Content Include="LandingPageResources\Employees\02142.jpg" />
+    <Content Include="LandingPageResources\Employees\02143.jpg" />
+    <Content Include="LandingPageResources\Employees\02144.jpg" />
+    <Content Include="LandingPageResources\Employees\02145.jpg" />
+    <Content Include="LandingPageResources\Employees\02146.jpg" />
+    <Content Include="LandingPageResources\Employees\02152.jpg" />
+    <Content Include="LandingPageResources\Employees\02153.jpg" />
+    <Content Include="LandingPageResources\Employees\02154.jpg" />
+    <Content Include="LandingPageResources\Employees\02155.jpg" />
+    <Content Include="LandingPageResources\Employees\02156.jpg" />
+    <Content Include="LandingPageResources\Employees\02158.jpg" />
+    <Content Include="LandingPageResources\Employees\02159.jpg" />
+    <Content Include="LandingPageResources\Employees\02160.jpg" />
+    <Content Include="LandingPageResources\Employees\02162.jpg" />
+    <Content Include="LandingPageResources\Employees\02165 .jpg" />
+    <Content Include="LandingPageResources\Employees\02165.jpg" />
+    <Content Include="LandingPageResources\Employees\02166 .jpg" />
+    <Content Include="LandingPageResources\Employees\02166.jpg" />
+    <Content Include="LandingPageResources\Employees\02167.jpg" />
+    <Content Include="LandingPageResources\Employees\02171.jpg" />
+    <Content Include="LandingPageResources\Employees\02172.jpg" />
+    <Content Include="LandingPageResources\Employees\02173.jpg" />
+    <Content Include="LandingPageResources\Employees\02174 .jpg" />
+    <Content Include="LandingPageResources\Employees\02175.jpg" />
+    <Content Include="LandingPageResources\Employees\02179.jpg" />
+    <Content Include="LandingPageResources\Employees\02180.jpg" />
+    <Content Include="LandingPageResources\Employees\02183.jpg" />
+    <Content Include="LandingPageResources\Employees\02184.jpg" />
+    <Content Include="LandingPageResources\Employees\02185.jpg" />
+    <Content Include="LandingPageResources\Employees\02186.jpg" />
+    <Content Include="LandingPageResources\Employees\02187.jpg" />
+    <Content Include="LandingPageResources\Employees\02188.jpg" />
+    <Content Include="LandingPageResources\Employees\02189.jpg" />
+    <Content Include="LandingPageResources\Employees\02190.jpg" />
+    <Content Include="LandingPageResources\Employees\02191.jpg" />
+    <Content Include="LandingPageResources\Employees\02192.jpg" />
+    <Content Include="LandingPageResources\Employees\02193.jpg" />
+    <Content Include="LandingPageResources\Employees\02194.jpg" />
+    <Content Include="LandingPageResources\Employees\02198.jpg" />
+    <Content Include="LandingPageResources\Employees\02199.jpg" />
+    <Content Include="LandingPageResources\Employees\02203.jpg" />
+    <Content Include="LandingPageResources\Employees\02204.jpg" />
+    <Content Include="LandingPageResources\Employees\02205.jpg" />
+    <Content Include="LandingPageResources\Employees\02206.jpg" />
+    <Content Include="LandingPageResources\Employees\02207.jpg" />
+    <Content Include="LandingPageResources\Employees\02208.jpg" />
+    <Content Include="LandingPageResources\Employees\02209.jpg" />
+    <Content Include="LandingPageResources\Employees\02210 - 1.jpg" />
+    <Content Include="LandingPageResources\Employees\02210.jpg" />
+    <Content Include="LandingPageResources\Employees\02211 -1.jpg" />
+    <Content Include="LandingPageResources\Employees\02211.jpg" />
+    <Content Include="LandingPageResources\Employees\02212 -1.jpg" />
+    <Content Include="LandingPageResources\Employees\02212.jpg" />
+    <Content Include="LandingPageResources\Employees\02213 -1.jpg" />
+    <Content Include="LandingPageResources\Employees\02213.jpg" />
+    <Content Include="LandingPageResources\Employees\02214 -1.jpg" />
+    <Content Include="LandingPageResources\Employees\02214.jpg" />
+    <Content Include="LandingPageResources\Employees\02215.jpg" />
+    <Content Include="LandingPageResources\Employees\02230.jpg" />
+    <Content Include="LandingPageResources\Employees\02231.jpg" />
+    <Content Include="LandingPageResources\Employees\02233.jpg" />
+    <Content Include="LandingPageResources\Employees\02234.jpg" />
+    <Content Include="LandingPageResources\Employees\02235.jpg" />
+    <Content Include="LandingPageResources\Employees\02240.jpg" />
+    <Content Include="LandingPageResources\Employees\02242.jpg" />
+    <Content Include="LandingPageResources\Employees\02243.jpg" />
+    <Content Include="LandingPageResources\Employees\02244.jpg" />
+    <Content Include="LandingPageResources\Employees\02245.jpg" />
+    <Content Include="LandingPageResources\Employees\02251 %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\02269.jpg" />
+    <Content Include="LandingPageResources\Employees\02270.jpg" />
+    <Content Include="LandingPageResources\Employees\02271.jpg" />
+    <Content Include="LandingPageResources\Employees\02272.jpg" />
+    <Content Include="LandingPageResources\Employees\02278.jpg" />
+    <Content Include="LandingPageResources\Employees\02278_page-0001 %281%29 %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\02292.jpg" />
+    <Content Include="LandingPageResources\Employees\02293.jpg" />
+    <Content Include="LandingPageResources\Employees\02294.jpg" />
+    <Content Include="LandingPageResources\Employees\02318.jpg" />
+    <Content Include="LandingPageResources\Employees\02321.jpg" />
+    <Content Include="LandingPageResources\Employees\02324.jpg" />
+    <Content Include="LandingPageResources\Employees\02330.jpg" />
+    <Content Include="LandingPageResources\Employees\02331.jpg" />
+    <Content Include="LandingPageResources\Employees\02334.jpg" />
+    <Content Include="LandingPageResources\Employees\02339.jpg" />
+    <Content Include="LandingPageResources\Employees\02341.jpg" />
+    <Content Include="LandingPageResources\Employees\02342.jpg" />
+    <Content Include="LandingPageResources\Employees\02343.jpg" />
+    <Content Include="LandingPageResources\Employees\02350.jpg" />
+    <Content Include="LandingPageResources\Employees\02352.jpg" />
+    <Content Include="LandingPageResources\Employees\02353.jpg" />
+    <Content Include="LandingPageResources\Employees\02354.jpg" />
+    <Content Include="LandingPageResources\Employees\02355.jpg" />
+    <Content Include="LandingPageResources\Employees\02360.jpg" />
+    <Content Include="LandingPageResources\Employees\02373 Karthick Raja R.jpg" />
+    <Content Include="LandingPageResources\Employees\02374.jpg" />
+    <Content Include="LandingPageResources\Employees\02383.jpg" />
+    <Content Include="LandingPageResources\Employees\02395 Amirthaa R.jpg" />
+    <Content Include="LandingPageResources\Employees\02397 Kishore M.jpg" />
+    <Content Include="LandingPageResources\Employees\02399 Sujith Roshan.jpg" />
+    <Content Include="LandingPageResources\Employees\02400 S Karthik.jpg" />
+    <Content Include="LandingPageResources\Employees\02401 Sharmila.jpg" />
+    <Content Include="LandingPageResources\Employees\02402 Akalya M .jpg" />
+    <Content Include="LandingPageResources\Employees\02403 Jayaseelan.jpg" />
+    <Content Include="LandingPageResources\Employees\02410.jpg" />
+    <Content Include="LandingPageResources\Employees\02411.jpg" />
+    <Content Include="LandingPageResources\Employees\02414.jpg" />
+    <Content Include="LandingPageResources\Employees\02416.jpg" />
+    <Content Include="LandingPageResources\Employees\02417.jpg" />
+    <Content Include="LandingPageResources\Employees\02461.jpg" />
+    <Content Include="LandingPageResources\Employees\02462.jpg" />
+    <Content Include="LandingPageResources\Employees\02467.jpg" />
+    <Content Include="LandingPageResources\Employees\02468.jpg" />
+    <Content Include="LandingPageResources\Employees\02487.jpg" />
+    <Content Include="LandingPageResources\Employees\02488.jpg" />
+    <Content Include="LandingPageResources\Employees\02505.jpg" />
+    <Content Include="LandingPageResources\Employees\02536.jpg" />
+    <Content Include="LandingPageResources\Employees\02537.jpg" />
+    <Content Include="LandingPageResources\Employees\02545.jpg" />
+    <Content Include="LandingPageResources\Employees\02546.jpg" />
+    <Content Include="LandingPageResources\Employees\20230905111058_00001.jpg" />
+    <Content Include="LandingPageResources\Employees\20398 Karthik K.jpg" />
+    <Content Include="LandingPageResources\Employees\2077.jpg" />
+    <Content Include="LandingPageResources\Employees\2079.jpg" />
+    <Content Include="LandingPageResources\Employees\2081.jpg" />
+    <Content Include="LandingPageResources\Employees\2084.jpg" />
+    <Content Include="LandingPageResources\Employees\22215 Anand pp.jpg" />
+    <Content Include="LandingPageResources\Employees\Adnan.jpg" />
+    <Content Include="LandingPageResources\Employees\AMIT BANGA %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\AMJAD PHOTO.JPG" />
+    <Content Include="LandingPageResources\Employees\Anand Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\ANGEL.jpg" />
+    <Content Include="LandingPageResources\Employees\ANIKET NIMBEKAR.jpg" />
+    <Content Include="LandingPageResources\Employees\Anithaasri.jpg" />
+    <Content Include="LandingPageResources\Employees\Arjun J Photo %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Askar Ali Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Azhar Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Baitin Photo.jpeg" />
+    <Content Include="LandingPageResources\Employees\Bhagesh Mhatre.jpg" />
+    <Content Include="LandingPageResources\Employees\Capture.jpg" />
+    <Content Include="LandingPageResources\Employees\Chaithra Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\D.Dinesh.jpg" />
+    <Content Include="LandingPageResources\Employees\Dillip-trainee.jpg" />
+    <Content Include="LandingPageResources\Employees\Dinesh Navin.jpg" />
+    <Content Include="LandingPageResources\Employees\Document1_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\DP_-_Copy-removebg-preview %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\FG000003.jpg" />
+    <Content Include="LandingPageResources\Employees\FURQUAN PHOTO.jpg" />
+    <Content Include="LandingPageResources\Employees\Gangadhara HS.jpg" />
+    <Content Include="LandingPageResources\Employees\GirishTR.jpg" />
+    <Content Include="LandingPageResources\Employees\Gokulakrishnan %282092%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Harish Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\HASSAN.png" />
+    <Content Include="LandingPageResources\Employees\hemakumar photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Hemanath.jpg" />
+    <Content Include="LandingPageResources\Employees\Himanshu.jpg" />
+    <Content Include="LandingPageResources\Employees\Idrak Ali Photo.JPG" />
+    <Content Include="LandingPageResources\Employees\Ilaiyaraja Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\image %2815%29.png" />
+    <Content Include="LandingPageResources\Employees\image.png" />
+    <Content Include="LandingPageResources\Employees\IMG-20220620-WA0011.jpg" />
+    <Content Include="LandingPageResources\Employees\IMG-20220630-WA0000 - Copy %283%29.jpg" />
+    <Content Include="LandingPageResources\Employees\jagan.jpg" />
+    <Content Include="LandingPageResources\Employees\Jaganatha Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\JAYRAJ NAGE.jpg" />
+    <Content Include="LandingPageResources\Employees\Joshwell Jose -Photo-min.jpg" />
+    <Content Include="LandingPageResources\Employees\K Vijaykumar Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\karthick.jpeg" />
+    <Content Include="LandingPageResources\Employees\Karthighayan - 2094.jpg" />
+    <Content Include="LandingPageResources\Employees\Karthik R.jpg" />
+    <Content Include="LandingPageResources\Employees\Karthik.M - 2090.jpg" />
+    <Content Include="LandingPageResources\Employees\kavi priya.jpg" />
+    <Content Include="LandingPageResources\Employees\Kavi priya.png" />
+    <Content Include="LandingPageResources\Employees\Krishna Kumar S Photo 01.jpg" />
+    <Content Include="LandingPageResources\Employees\LokeshP.jpg" />
+    <Content Include="LandingPageResources\Employees\Madhusoodhan Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\mahendra kale photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Maria -02507.jpg" />
+    <Content Include="LandingPageResources\Employees\Mohamed Anas - 2093.jpg" />
+    <Content Include="LandingPageResources\Employees\Mohamed Anees - 2091.jpg" />
+    <Content Include="LandingPageResources\Employees\Mr Edvard.jpg" />
+    <Content Include="LandingPageResources\Employees\Ms Soumiya.jpg" />
+    <Content Include="LandingPageResources\Employees\Muralikrishnan.jpg" />
+    <Content Include="LandingPageResources\Employees\Muthu Sujay.jpg" />
+    <Content Include="LandingPageResources\Employees\Nandeesh.jpg" />
+    <Content Include="LandingPageResources\Employees\Naveen Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\NIKHIL MISHRA.jpg" />
+    <Content Include="LandingPageResources\Employees\Nikhil Rana Photos.JPG" />
+    <Content Include="LandingPageResources\Employees\Nikhil- Safety Officer.jpg" />
+    <Content Include="LandingPageResources\Employees\P Raj Kumar Reddy.jpg" />
+    <Content Include="LandingPageResources\Employees\P.SURESH.jpeg" />
+    <Content Include="LandingPageResources\Employees\Pavithra.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Aarman Patel.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Beig Maaz.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Brian Britto.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Deep Jangale.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Devanshi.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Dhanashree Manjrekar.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Dinesh Palanivel.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Druv Parad.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Gokul More.jpeg" />
+    <Content Include="LandingPageResources\Employees\Photo - Hasan Shaikh.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Imran Kazi.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Kazim Shaikh.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Malik Mohd Tauseef Nazrul.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Mehul Kotak.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Mohammad Bilal.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Mohammad Nasir.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Moin Khan.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Pallavi.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Parmeshwar Yadav.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Pooja Patil.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Rahul Sadanshiv.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Rahul Wadadare.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Riddhesh Kanchan.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Rohit Gawade.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Sajeed Pinjari.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Subodh Jadhav.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Subramanian A.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Suraj Rokade.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Suryakiran Nagam.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Suyog Pachore.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Swapnil Jain.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo - Vinayak Shinde.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo of Hemenath-Sr.Engineer%28Service%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Photo-Brijesh kumar.JPG" />
+    <Content Include="LandingPageResources\Employees\Photo.JPG" />
+    <Content Include="LandingPageResources\Employees\Photocopy of Hemanth-2566.jpg" />
+    <Content Include="LandingPageResources\Employees\Photocopy of I.Bharat Kumar-Engineer%28Service%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Photocopy of Jehangir Basha.jpg" />
+    <Content Include="LandingPageResources\Employees\Photocopy of of G.Krishna Reddy-Sr.Engineer%28Installation%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Photocopy of saumya%28Sales coordinator%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Photocopy of Vishal chary%28Engineer%29 Installation.jpg" />
+    <Content Include="LandingPageResources\Employees\Photograph_Sachin choudhary_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\pic %282%29.jpeg" />
+    <Content Include="LandingPageResources\Employees\Pradeep.jpg" />
+    <Content Include="LandingPageResources\Employees\PRATHMESH KAPASE - PHOTO.JPG" />
+    <Content Include="LandingPageResources\Employees\R.png" />
+    <Content Include="LandingPageResources\Employees\rahul-min.png" />
+    <Content Include="LandingPageResources\Employees\RAJAT SHARMA %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Ranjith kumar.jpg" />
+    <Content Include="LandingPageResources\Employees\Ranjith.jpg" />
+    <Content Include="LandingPageResources\Employees\Reshu Foto.JPG" />
+    <Content Include="LandingPageResources\Employees\Reshu Sinha Photo.JPG" />
+    <Content Include="LandingPageResources\Employees\Reshu Sinha Photo.PNG" />
+    <Content Include="LandingPageResources\Employees\Rijo chennai.jpg" />
+    <Content Include="LandingPageResources\Employees\Rohan Udupa %282085%29_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\Rohit Sagar %282095%29_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\Sachin %282087%29_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\Sachin Chodankar %282077%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Sachin Chodankar %282077%29_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\sakthi ganapathi.jpeg" />
+    <Content Include="LandingPageResources\Employees\Samu Shiahbdeen Photo.jpeg" />
+    <Content Include="LandingPageResources\Employees\Sandeep Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Sanju %282086%29_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\Santhana Krishnan %282084%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Santhana Krishnan %282084%29_page-0001.jpg" />
+    <Content Include="LandingPageResources\Employees\santhosh kumar photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Saravanakumar Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\SATHEESH.jpg" />
+    <Content Include="LandingPageResources\Employees\Sathis.jpg" />
+    <Content Include="LandingPageResources\Employees\Screenshot 2023-02-16 162235.jpg" />
+    <Content Include="LandingPageResources\Employees\sebastin.jpg" />
+    <Content Include="LandingPageResources\Employees\SHAHBAZ QAISER.jpg" />
+    <Content Include="LandingPageResources\Employees\Shamshul.jpg" />
+    <Content Include="LandingPageResources\Employees\SJanakiRaman.jpg" />
+    <Content Include="LandingPageResources\Employees\SRIDHAR.S %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\SURAJ PATIL.jpg" />
+    <Content Include="LandingPageResources\Employees\Sushmita Photo.jpeg" />
+    <Content Include="LandingPageResources\Employees\Thowfeek Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Udhayakumar.jpg" />
+    <Content Include="LandingPageResources\Employees\Vengatesh M Photo.jpg" />
+    <Content Include="LandingPageResources\Employees\Venkidesh Babu Photo-min.jpg" />
+    <Content Include="LandingPageResources\Employees\Vijikumar Photo %281%29.jpg" />
+    <Content Include="LandingPageResources\Employees\Vinoth Photo-min %282%29.jpg" />
+    <Content Include="LandingPageResources\Employees\W780.jpg" />
+    <Content Include="LandingPageResources\Employees\WhatsApp Image 2022-06-09 at 2.25.03 PM.jpeg" />
+    <Content Include="LandingPageResources\Employees\WhatsApp Image 2022-10-14 at 12.51.07 PM %281%29.jpeg" />
+    <Content Include="LandingPageResources\Employees\WhatsApp Image 2023-09-01 at 11.18.39 AM.jpeg" />
+    <Content Include="LandingPageResources\Employees\WhatsApp Image 2023-11-10 at 9.18.00 AM %282%29.jpeg" />
+    <Content Include="LandingPageResources\Employees\YOGESH WALUNJ.jpg" />
+    <Content Include="LandingPageResources\Employees\yogitha photo.jpg" />
+    <Content Include="LandingPageResources\Events\20220601152940.jpg" />
+    <Content Include="LandingPageResources\Events\20220608122137.jpg" />
+    <Content Include="LandingPageResources\Events\20220614075402.jpg" />
+    <Content Include="LandingPageResources\Events\20220614154102.jpg" />
+    <Content Include="LandingPageResources\Events\20220620082823.jpg" />
+    <Content Include="LandingPageResources\Events\20220620083120.jpg" />
+    <Content Include="LandingPageResources\Events\20220620083806.jpg" />
+    <Content Include="LandingPageResources\Events\20220620083842.jpg" />
+    <Content Include="LandingPageResources\Events\20220622082030.jpg" />
+    <Content Include="LandingPageResources\Events\20220622085313.jpg" />
+    <Content Include="LandingPageResources\Events\20220622090628.jpg" />
+    <Content Include="LandingPageResources\Events\20220624100321.jpg" />
+    <Content Include="LandingPageResources\Events\20220624100443.jpg" />
+    <Content Include="LandingPageResources\Events\20220628110411.JPG" />
+    <Content Include="LandingPageResources\Events\20220628110628.JPG" />
+    <Content Include="LandingPageResources\Events\20220628110949.JPG" />
+    <Content Include="LandingPageResources\Events\20220714105707.jpg" />
+    <Content Include="LandingPageResources\Events\20220714105838.jpg" />
+    <Content Include="LandingPageResources\Events\20220714105947.jpg" />
+    <Content Include="LandingPageResources\Events\20220714110006.jpg" />
+    <Content Include="LandingPageResources\Events\20220721121100.jpg" />
+    <Content Include="LandingPageResources\Events\20220721121337.jpg" />
+    <Content Include="LandingPageResources\Events\20220728082559.jpg" />
+    <Content Include="LandingPageResources\Events\20220728082611.jpg" />
+    <Content Include="LandingPageResources\Events\20220728082616.jpg" />
+    <Content Include="LandingPageResources\Events\20220728082627.jpg" />
+    <Content Include="LandingPageResources\Events\20220728082632.jpg" />
+    <Content Include="LandingPageResources\Events\20220729102207.jpg" />
+    <Content Include="LandingPageResources\Events\20220729102302.jpg" />
+    <Content Include="LandingPageResources\Events\20220810091959.jpg" />
+    <Content Include="LandingPageResources\Events\20220810165255.jpg" />
+    <Content Include="LandingPageResources\Events\20220928120837.jpg" />
+    <Content Include="LandingPageResources\Events\20221005140922.jpg" />
+    <Content Include="LandingPageResources\Events\20221005141012.jpg" />
+    <Content Include="LandingPageResources\Events\20221007101259.jpg" />
+    <Content Include="LandingPageResources\Events\20221007163956.jpg" />
+    <Content Include="LandingPageResources\Events\20221007164058.jpg" />
+    <Content Include="LandingPageResources\Events\20221007164115.jpg" />
+    <Content Include="LandingPageResources\Events\20221007164125.jpg" />
+    <Content Include="LandingPageResources\Events\20221010171121.jpg" />
+    <Content Include="LandingPageResources\Events\20221010171237.jpg" />
+    <Content Include="LandingPageResources\Events\20221011085159.jpg" />
+    <Content Include="LandingPageResources\Events\20221011090605.jpg" />
+    <Content Include="LandingPageResources\Events\20221011091909.jpg" />
+    <Content Include="LandingPageResources\Events\20221011092249.jpg" />
+    <Content Include="LandingPageResources\Events\20221012114052.jpeg" />
+    <Content Include="LandingPageResources\Events\20221012114103.jpeg" />
+    <Content Include="LandingPageResources\Events\20221015193529.jpg" />
+    <Content Include="LandingPageResources\Events\20221015194332.jpg" />
+    <Content Include="LandingPageResources\Events\20221026100809.jpg" />
+    <Content Include="LandingPageResources\Events\20221104141932.jpg" />
+    <Content Include="LandingPageResources\Events\20221110114752.jpg" />
+    <Content Include="LandingPageResources\Events\20221110115102.jpg" />
+    <Content Include="LandingPageResources\Events\20221110161524.jpg" />
+    <Content Include="LandingPageResources\Events\20221110161552.jpg" />
+    <Content Include="LandingPageResources\Events\20221114113514.jpg" />
+    <Content Include="LandingPageResources\Events\20221114113642.jpg" />
+    <Content Include="LandingPageResources\Events\20221124093526.jpeg" />
+    <Content Include="LandingPageResources\Events\20221129175158.jpg" />
+    <Content Include="LandingPageResources\Events\20221202093057.jpg" />
+    <Content Include="LandingPageResources\Events\20221202093128.jpg" />
+    <Content Include="LandingPageResources\Events\20221202093429.jpg" />
+    <Content Include="LandingPageResources\Events\20221202093522.jpg" />
+    <Content Include="LandingPageResources\Events\20221202110153.jpg" />
+    <Content Include="LandingPageResources\Events\20221202110204.jpg" />
+    <Content Include="LandingPageResources\Events\20230103122954.jpg" />
+    <Content Include="LandingPageResources\Events\20230103123506.jpg" />
+    <Content Include="LandingPageResources\Events\20230103125141.jpg" />
+    <Content Include="LandingPageResources\Events\20230103125526.jpg" />
+    <Content Include="LandingPageResources\Events\20230213171011.jpg" />
+    <Content Include="LandingPageResources\Events\20230213171023.jpg" />
+    <Content Include="LandingPageResources\Events\20230213171024.jpg" />
+    <Content Include="LandingPageResources\Events\20230213171025.jpg" />
+    <Content Include="LandingPageResources\Events\20230214092259.jpg" />
+    <Content Include="LandingPageResources\Events\20230214092355.jpg" />
+    <Content Include="LandingPageResources\Events\20230214092404.jpg" />
+    <Content Include="LandingPageResources\Events\20230214092429.jpg" />
+    <Content Include="LandingPageResources\Events\20230214092436.jpg" />
+    <Content Include="LandingPageResources\Events\20230215083709.jpg" />
+    <Content Include="LandingPageResources\Events\20230215083720.jpg" />
+    <Content Include="LandingPageResources\Events\20230302135216.jpg" />
+    <Content Include="LandingPageResources\Events\20230302135404.jpg" />
+    <Content Include="LandingPageResources\Events\20230302140610.jpg" />
+    <Content Include="LandingPageResources\Events\20230302140610_1.jpg" />
+    <Content Include="LandingPageResources\Events\20230302140647.jpg" />
+    <Content Include="LandingPageResources\Events\20230308105651.jpg" />
+    <Content Include="LandingPageResources\Events\20230308110314.jpg" />
+    <Content Include="LandingPageResources\Events\20230314123337.jpg" />
+    <Content Include="LandingPageResources\Events\20230314123349.jpg" />
+    <Content Include="LandingPageResources\Events\20230314123350.jpg" />
+    <Content Include="LandingPageResources\Events\20230314134731.jpg" />
+    <Content Include="LandingPageResources\Events\20230314134840.jpg" />
+    <Content Include="LandingPageResources\Events\20230324172507.jpg" />
+    <Content Include="LandingPageResources\Events\20230330104413.jpg" />
+    <Content Include="LandingPageResources\Events\20230330105848.jpg" />
+    <Content Include="LandingPageResources\Events\20230330105915.jpg" />
+    <Content Include="LandingPageResources\Events\20230330105940.jpg" />
+    <Content Include="LandingPageResources\Events\20230330105952.jpg" />
+    <Content Include="LandingPageResources\Events\20230330110001.jpg" />
+    <Content Include="LandingPageResources\Events\20230330110010.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110021.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110028.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110042.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110051.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110110.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110116.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110121.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110130.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110138.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110142.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110147.JPG" />
+    <Content Include="LandingPageResources\Events\20230330110154.JPG" />
+    <Content Include="LandingPageResources\Events\20230331105239.jpg" />
+    <Content Include="LandingPageResources\Events\20230331105543.jpg" />
+    <Content Include="LandingPageResources\Events\20230331105554.jpg" />
+    <Content Include="LandingPageResources\Events\20230331105601.jpg" />
+    <Content Include="LandingPageResources\Events\20230331105608.jpg" />
+    <Content Include="LandingPageResources\Events\20230331105613.jpg" />
+    <Content Include="LandingPageResources\Events\20230331111216.jpeg" />
+    <Content Include="LandingPageResources\Events\20230331111242.jpeg" />
+    <Content Include="LandingPageResources\Events\20230331111402.jpeg" />
+    <Content Include="LandingPageResources\Events\20230331111412.jpeg" />
+    <Content Include="LandingPageResources\Events\20230331111417.jpeg" />
+    <Content Include="LandingPageResources\Events\20230403190936.jpg" />
+    <Content Include="LandingPageResources\Events\20230403191032.jpg" />
+    <Content Include="LandingPageResources\Events\20230403191131.jpg" />
+    <Content Include="LandingPageResources\Events\20230403192025.jpg" />
+    <Content Include="LandingPageResources\Events\20230403193414.jpg" />
+    <Content Include="LandingPageResources\Events\20230403194002.jpg" />
+    <Content Include="LandingPageResources\Events\20230403194034.jpg" />
+    <Content Include="LandingPageResources\Events\20230406104849.jpeg" />
+    <Content Include="LandingPageResources\Events\20230406104937.jpeg" />
+    <Content Include="LandingPageResources\Events\20230406105006.jpeg" />
+    <Content Include="LandingPageResources\Events\20230406105016.jpeg" />
+    <Content Include="LandingPageResources\Events\20230406105034.jpeg" />
+    <Content Include="LandingPageResources\Events\20230406105046.jpeg" />
+    <Content Include="LandingPageResources\Events\20230410151001.jpeg" />
+    <Content Include="LandingPageResources\Events\20230503111459.jpeg" />
+    <Content Include="LandingPageResources\Events\20230503111604.jpeg" />
+    <Content Include="LandingPageResources\Events\20230503111624.jpeg" />
+    <Content Include="LandingPageResources\Events\20230503111938.jpeg" />
+    <Content Include="LandingPageResources\Events\20230503112448.jpg" />
+    <Content Include="LandingPageResources\Events\20230503120729.jpg" />
+    <Content Include="LandingPageResources\Events\20230503120753.jpg" />
+    <Content Include="LandingPageResources\Events\20230503120804.jpg" />
+    <Content Include="LandingPageResources\Events\20230504203225.jpg" />
+    <Content Include="LandingPageResources\Events\20230504203238.jpg" />
+    <Content Include="LandingPageResources\Events\20230504203316.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175140.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175220.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175236.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175250.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175316.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175353.jpg" />
+    <Content Include="LandingPageResources\Events\20230505175414.jpg" />
+    <Content Include="LandingPageResources\Events\20230505180417.jpg" />
+    <Content Include="LandingPageResources\Events\20230506093519.jpeg" />
+    <Content Include="LandingPageResources\Events\20230506093547.jpg" />
+    <Content Include="LandingPageResources\Events\20230506093610.jpg" />
+    <Content Include="LandingPageResources\Events\20230506093626.jpeg" />
+    <Content Include="LandingPageResources\Events\20230506093638.jpeg" />
+    <Content Include="LandingPageResources\Events\20230506093700.jpeg" />
+    <Content Include="LandingPageResources\Events\20230506093713.jpeg" />
+    <Content Include="LandingPageResources\Events\20230506093728.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510125929.jpg" />
+    <Content Include="LandingPageResources\Events\20230510130003.jpg" />
+    <Content Include="LandingPageResources\Events\20230510130021.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510130028.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510130034.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510130045.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510130052.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510130059.jpeg" />
+    <Content Include="LandingPageResources\Events\20230510130106.jpeg" />
+    <Content Include="LandingPageResources\Events\20230622081801.jpg" />
+    <Content Include="LandingPageResources\Events\20230622081849.jpg" />
+    <Content Include="LandingPageResources\Events\20230622081901.jpg" />
+    <Content Include="LandingPageResources\Events\20230622084747.jpg" />
+    <Content Include="LandingPageResources\Events\20230622084759.jpg" />
+    <Content Include="LandingPageResources\Events\20230622084845.jpg" />
+    <Content Include="LandingPageResources\Events\20230622084935.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085002.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085353.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085405.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085441.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085530.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085658.jpg" />
+    <Content Include="LandingPageResources\Events\20230622085848.jpg" />
+    <Content Include="LandingPageResources\Events\20230622090010.jpg" />
+    <Content Include="LandingPageResources\Events\20230622090056.jpg" />
+    <Content Include="LandingPageResources\Events\20230622090148.jpg" />
+    <Content Include="LandingPageResources\Events\20230703111336.PNG" />
+    <Content Include="LandingPageResources\Events\20230703111448.PNG" />
+    <Content Include="LandingPageResources\Events\20230717134739.jpg" />
+    <Content Include="LandingPageResources\Events\20230721173104.jpg" />
+    <Content Include="LandingPageResources\Events\20230721173116.jpg" />
+    <Content Include="LandingPageResources\Events\20230721173133.jpg" />
+    <Content Include="LandingPageResources\Events\20230724093012.jpg" />
+    <Content Include="LandingPageResources\Events\20230818170518 - Copy.jpg" />
+    <Content Include="LandingPageResources\Events\20230818170518.jpg" />
+    <Content Include="LandingPageResources\Events\20230818170531.jpg" />
+    <Content Include="LandingPageResources\Events\20230921172930.jpg" />
+    <Content Include="LandingPageResources\Events\20230922083014.jpg" />
+    <Content Include="LandingPageResources\Events\20230922091016.jpg" />
+    <Content Include="LandingPageResources\Events\20230922091028.jpg" />
+    <Content Include="LandingPageResources\Events\20230922091620.jpg" />
+    <Content Include="LandingPageResources\Events\20230926120419.jpg" />
+    <Content Include="LandingPageResources\Events\20231024155429.jpg" />
+    <Content Include="LandingPageResources\Events\20231024155455.jpg" />
+    <Content Include="LandingPageResources\Events\20231024155854.jpg" />
+    <Content Include="LandingPageResources\Events\20231024155956.jpg" />
+    <Content Include="LandingPageResources\Events\20231024160028.jpg" />
+    <Content Include="LandingPageResources\Events\20231024160036.jpg" />
+    <Content Include="LandingPageResources\Events\20231024161403.jpg" />
+    <Content Include="LandingPageResources\Events\20231024161418.jpg" />
+    <Content Include="LandingPageResources\Events\20231024161457.jpg" />
+    <Content Include="LandingPageResources\Events\20231114121638.JPG" />
+    <Content Include="LandingPageResources\Events\20231114121946.JPG" />
+    <Content Include="LandingPageResources\Events\20231114122229.jpg" />
+    <Content Include="LandingPageResources\Events\20231114122509.jpg" />
+    <Content Include="LandingPageResources\Events\20231114123105.jpg" />
+    <Content Include="LandingPageResources\Events\20231114123151.jpg" />
+    <Content Include="LandingPageResources\Events\20231114123219.jpg" />
+    <Content Include="LandingPageResources\Events\20231114123254.jpg" />
+    <Content Include="LandingPageResources\Events\20231114171026.jpg" />
+    <Content Include="LandingPageResources\Events\20231129171458.jpg" />
+    <Content Include="LandingPageResources\Events\20231129171645.jpg" />
+    <Content Include="LandingPageResources\Events\20231129171823.jpg" />
+    <Content Include="LandingPageResources\Events\20231129172017.jpg" />
+    <Content Include="LandingPageResources\Events\20231129172154.jpg" />
+    <Content Include="LandingPageResources\Events\20231129172304.jpg" />
+    <Content Include="LandingPageResources\Events\20231230140327157-b59884b9-c75b-448d-ad50-3b8c1de9070a.jpg" />
+    <Content Include="LandingPageResources\Events\20231230140923301-0888fe9c-0c18-48ce-ab8d-f84159c7b1af.JPG" />
+    <Content Include="LandingPageResources\Events\Facilititating women Employee.jpg" />
+    <Content Include="LandingPageResources\Events\Fun Activity -Women%27s Day 2022.jpg" />
+    <Content Include="LandingPageResources\Events\Handing over.jpg" />
+    <Content Include="LandingPageResources\Events\Sales Coordinator.jpg" />
+    <Content Include="LandingPageResources\Events\Women%27s Day Celebration 2022 %40 CHO.jpg" />
+    <Content Include="LandingPageResources\Events\Women%27s Day Celebration 2022 %40 CHQ OFFICE.jpg" />
+    <Content Include="LandingPageResources\Events\Women%27s Day Celebration 2022 %40 Mumbai.jpg" />
+    <Content Include="LandingPageResources\Events\Women%27s Day Celebration 2022.jpg" />
+    <Content Include="LandingPageResources\Projects\GOLDEN SAROVAR PORTICO\20231231140802655-aa343fa5-31d6-4791-b073-a6b5aa0707cd1.png" />
+    <Content Include="LandingPageResources\Projects\GOLDEN SAROVAR PORTICO\20231231140802655-aa343fa5-31d6-4791-b073-a6b5aa0707cd2.png" />
+    <Content Include="LandingPageResources\Projects\GOLDEN SAROVAR PORTICO\20231231140802655-aa343fa5-31d6-4791-b073-a6b5aa0707cd3.png" />
+    <Content Include="LandingPageResources\Projects\GOLDEN SAROVAR PORTICO\20231231140802655-aa343fa5-31d6-4791-b073-a6b5aa0707cd4.png" />
+    <Content Include="LandingPageResources\QuickLinks\adrenalin_max_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\dms_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\eplan_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\erp_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\fjp_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\fpt_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\gmail_logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\it_support.png" />
+    <Content Include="LandingPageResources\QuickLinks\MRB_LOGO.png" />
+    <Content Include="LandingPageResources\QuickLinks\outlook_Logo.png" />
+    <Content Include="LandingPageResources\QuickLinks\vendora_logo.png" />
+    <Content Include="LandingPageResources\Quotes\QUOTE 1\eaf6771e-82d6-4879-bdcf-3a18da07c57a.jpg" />
+    <Content Include="LandingPageResources\Quotes\QUOTES\20231230110204692-b06d6b81-bd3b-464f-b7b4-3656d850e377.jpg" />
+    <Content Include="LandingPageResources\Videos\HrInductionMM1toSM4.mp4" />
+    <Content Include="LandingPageResources\Videos\HrInductionT1toTE3.mp4" />
+    <Content Include="LandingPageResources\Videos\HrInductionTrainee.mp4" />
+    <Content Include="LandingPageResources\Videos\Live\CarTopEntryAndExitProcess.mp4" />
+    <Content Include="LandingPageResources\Videos\Live\HrInductionE1toE5.mp4" />
+    <Content Include="LandingPage\CSS\awareness-slide-show.css" />
+    <Content Include="LandingPage\CSS\employee-contact-show.css" />
+    <Content Include="LandingPage\CSS\employee-slide-show.css" />
+    <Content Include="LandingPage\CSS\event-slide-show.css" />
+    <Content Include="LandingPage\CSS\layout.css" />
+    <Content Include="LandingPage\CSS\login-form.css" />
+    <Content Include="LandingPage\CSS\main-header.css" />
+    <Content Include="LandingPage\CSS\news-container.css" />
+    <Content Include="LandingPage\CSS\project-gallery-slide-show.css" />
+    <Content Include="LandingPage\CSS\quicklinks-container.css" />
+    <Content Include="LandingPage\CSS\quotes-container.css" />
+    <Content Include="LandingPage\CSS\site-navigation.css" />
+    <Content Include="LandingPage\CSS\video-container.css" />
+    <Content Include="LandingPage\JS\awareness-slide-show.js" />
+    <Content Include="LandingPage\JS\employee-contact-show.js" />
+    <Content Include="LandingPage\JS\employee-slide-show.js" />
+    <Content Include="LandingPage\JS\event-slide-show.js" />
+    <Content Include="LandingPage\JS\news-renderer.js" />
+    <Content Include="LandingPage\JS\project-gallery-slide-show.js" />
+    <Content Include="LandingPage\JS\quicklinks-container.js" />
+    <Content Include="LandingPage\JS\quotes-container.js" />
+    <Content Include="LandingPage\JS\video-container.js" />
+    <Content Include="LandingPage\LandingPage.aspx" />
+    <Content Include="LandingPage\Resource\employee_contact_bg.png" />
+    <Content Include="LandingPage\Resource\employee_slide_show_bg.png" />
+    <Content Include="LandingPage\Resource\fujitec-logo.png" />
+    <Content Include="LandingPage\Resource\login_bg.png" />
+    <Content Include="LandingPage\Resource\login_Illustration.png" />
+    <Content Include="LandingPage\Resource\news_container_bg.png" />
+    <Content Include="LandingPage\Resource\section1_bg.png" />
+    <Content Include="LandingPage\Resource\section3_bg.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="Management.aspx" />
+    <Content Include="Master\SkillGoalMapping.aspx" />
+    <Content Include="Master\SkillMappingMaster.aspx" />
+    <Content Include="Master\DepartmentMaster.aspx" />
+    <Content Include="Master\DesignationMaster.aspx" />
+    <Content Include="Master\EmployeeMaster.aspx" />
+    <Content Include="MISReports\ClosedMargin.aspx" />
+    <Content Include="MISReports\DashboardDeliveryEquipmentRpt.aspx" />
+    <Content Include="MISReports\DomesticWarehouseDashboard.aspx" />
+    <Content Include="MISReports\ExportWarehouseDashboard.aspx" />
+    <Content Include="MISReports\InventoryDetailedReport.aspx" />
+    <Content Include="MISReports\InventoryReport.aspx" />
+    <Content Include="MISReports\WarehouseDashboard.aspx" />
+    <Content Include="NewandEventPopup.aspx" />
+    <Content Include="NewsEvents.aspx" />
+    <Content Include="packages\ClosedXML.0.95.4\.signature.p7s" />
+    <Content Include="packages\ClosedXML.0.95.4\ClosedXML.0.95.4.nupkg" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\net40\ClosedXML.dll" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\net40\ClosedXML.pdb" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\net40\ClosedXML.xml" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\net46\ClosedXML.pdb" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\net46\ClosedXML.xml" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\netstandard2.0\ClosedXML.dll" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\netstandard2.0\ClosedXML.pdb" />
+    <Content Include="packages\ClosedXML.0.95.4\lib\netstandard2.0\ClosedXML.xml" />
+    <Content Include="packages\ClosedXML.0.95.4\nuget-logo.png" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\.signature.p7s" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\DocumentFormat.OpenXml.2.15.0.nupkg" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\icon.png" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\net35\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\net35\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\net40\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\net40\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\net46\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\net46\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\netstandard1.3\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\netstandard1.3\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\netstandard2.0\DocumentFormat.OpenXml.dll" />
+    <Content Include="packages\DocumentFormat.OpenXml.2.15.0\lib\netstandard2.0\DocumentFormat.OpenXml.xml" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\.signature.p7s" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\ExcelNumberFormat.1.0.10.nupkg" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.xml" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\lib\netstandard1.0\ExcelNumberFormat.dll" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\lib\netstandard1.0\ExcelNumberFormat.xml" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\lib\netstandard2.0\ExcelNumberFormat.dll" />
+    <Content Include="packages\ExcelNumberFormat.1.0.10\lib\netstandard2.0\ExcelNumberFormat.xml" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\.signature.p7s" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\app.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\app.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net45\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\app.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\app.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\content\net46\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1.nupkg" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\net45\install.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\net45\uninstall.ps1" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csi.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\csi.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.CSharp.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.AppContext.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.Collections.Immutable.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.Diagnostics.StackTrace.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.IO.FileSystem.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\System.Reflection.Metadata.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\vbc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\VBCSCompiler.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\VBCSCompiler.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\csi.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.CSharp.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.Managed.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\Microsoft.Win32.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.AppContext.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Collections.Immutable.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Console.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Diagnostics.StackTrace.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Globalization.Calendars.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.Compression.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.Compression.ZipFile.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.FileSystem.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Net.Http.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Net.Sockets.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Reflection.Metadata.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Text.Encoding.CodePages.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.ValueTuple.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.ReaderWriter.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XmlDocument.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XPath.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\System.Xml.XPath.XDocument.dll" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.exe.config" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\vbc.rsp" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\RoslynLatest\VBCSCompiler.exe.config" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\.signature.p7s" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\MonoAndroid10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\MonoTouch10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\net45\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\netcore50\Microsoft.CSharp.dll" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\netcoreapp2.0\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\netstandard1.3\Microsoft.CSharp.dll" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\netstandard2.0\Microsoft.CSharp.dll" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\netstandard2.0\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\portable-net45+win8+wp8+wpa81\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\uap10.0.16299\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\win8\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\wp80\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\wpa81\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\xamarinios10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\xamarinmac20\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\xamarintvos10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\lib\xamarinwatchos10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\LICENSE.TXT" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\Microsoft.CSharp.4.7.0.nupkg" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\MonoAndroid10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\MonoTouch10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\net45\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\de\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\es\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\fr\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\it\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\ja\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\ko\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\Microsoft.CSharp.dll" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\ru\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\zh-hans\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcore50\zh-hant\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netcoreapp2.0\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\de\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\es\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\fr\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\it\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\ja\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\ko\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\Microsoft.CSharp.dll" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\ru\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\zh-hans\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard1.0\zh-hant\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard2.0\Microsoft.CSharp.dll" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\netstandard2.0\Microsoft.CSharp.xml" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\portable-net45+win8+wp8+wpa81\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\uap10.0.16299\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\win8\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\wp80\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\wpa81\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\xamarinios10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\xamarinmac20\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\xamarintvos10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\ref\xamarinwatchos10\_._" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\Microsoft.CSharp.4.7.0\version.txt" />
+    <Content Include="QualityApp.aspx" />
+    <Content Include="Safety.aspx" />
+    <Content Include="SafetySTBT.aspx" />
+    <Content Include="SafetyTBT.aspx" />
+    <Content Include="Content\ej\web\office-365\icons\ejicons.woff" />
+    <Content Include="Content\ej\web\office-365\icons\ejicons.ttf" />
+    <Content Include="Content\ej\web\office-365\icons\ejicons.eot" />
+    <Content Include="Content\ej\web\office-365\ej.theme.less" />
+    <Content Include="Content\ej\web\material\icons\ejicons.woff" />
+    <Content Include="Content\ej\web\material\icons\ejicons.ttf" />
+    <Content Include="Content\ej\web\material\icons\ejicons.eot" />
+    <Content Include="Content\ej\web\material\ej.theme.less" />
+    <Content Include="Content\ej\web\high-contrast-02\ej.theme.less" />
+    <Content Include="Content\ej\web\high-contrast-01\ej.theme.less" />
+    <Content Include="Content\ej\web\gradient-saffron\ej.theme.less" />
+    <Content Include="Content\ej\web\gradient-saffron-dark\ej.theme.less" />
+    <Content Include="Content\ej\web\gradient-lime\ej.theme.less" />
+    <Content Include="Content\ej\web\gradient-lime-dark\ej.theme.less" />
+    <Content Include="Content\ej\web\gradient-azure\ej.theme.less" />
+    <Content Include="Content\ej\web\gradient-azure-dark\ej.theme.less" />
+    <Content Include="Content\ej\web\flat-saffron\ej.theme.less" />
+    <Content Include="Content\ej\web\flat-saffron-dark\ej.theme.less" />
+    <Content Include="Content\ej\web\flat-lime\ej.theme.less" />
+    <Content Include="Content\ej\web\flat-lime-dark\ej.theme.less" />
+    <Content Include="Content\ej\web\flat-azure-dark\ej.theme.less" />
+    <Content Include="Content\ej\web\ej.widgets.core.office-365.less" />
+    <Content Include="Content\ej\web\ej.widgets.core.material.less" />
+    <Content Include="Content\ej\web\ej.widgets.core.less" />
+    <Content Include="Content\ej\web\ej.widgets.core.bootstrap.less" />
+    <Content Include="Content\ej\web\default-theme\ej.theme.less" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\ejxlicons.woff" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\ejxlicons.ttf" />
+    <Content Include="Content\ej\web\common-images\spreadsheet\ejxlicons.eot" />
+    <Content Include="Content\ej\web\common-images\ribbon\ejrbnicons.woff" />
+    <Content Include="Content\ej\web\common-images\ribbon\ejrbnicons.ttf" />
+    <Content Include="Content\ej\web\common-images\ribbon\ejrbnicons.eot" />
+    <Content Include="Content\ej\web\common-images\navigationdrawer\icons.woff" />
+    <Content Include="Content\ej\web\common-images\navigationdrawer\icons.ttf" />
+    <Content Include="Content\ej\web\common-images\navigationdrawer\icons.eot" />
+    <Content Include="Content\ej\web\common-images\ejicons.woff" />
+    <Content Include="Content\ej\web\common-images\ejicons.ttf" />
+    <Content Include="Content\ej\web\common-images\ejicons.eot" />
+    <Content Include="Content\ej\web\bootstrap-theme\ej.theme.less" />
+    <Content Include="Content\ej\mobile\images\ejmmobilefonts.woff" />
+    <Content Include="Content\ej\mobile\images\ejmmobilefonts.ttf" />
+    <Content Include="Content\ej\mobile\images\ejmmobilefonts.eot" />
+    <Content Include="LandingPageResources\Employees\Sachin Chodankar %282077%29.pdf" />
+    <None Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\ej\common\ej.core.min.js" />
+    <Content Include="Scripts\ej\common\ej.data.min.js" />
+    <Content Include="Scripts\ej\common\ej.draggable.min.js" />
+    <Content Include="Scripts\ej\common\ej.globalize.min.js" />
+    <Content Include="Scripts\ej\common\ej.scroller.min.js" />
+    <Content Include="Scripts\ej\common\ej.touch.min.js" />
+    <Content Include="Scripts\ej\common\ej.unobtrusive.min.js" />
+    <Content Include="Scripts\ej\common\ej.web.react.min.js" />
+    <Content Include="Scripts\ej\common\ej.widget.angular.min.js" />
+    <Content Include="Scripts\ej\common\ej.widget.ko.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.barcode.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.bulletgraph.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.chart.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.circulargauge.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.diagram.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.digitalgauge.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.gauge.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.heatmap.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.lineargauge.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.map.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.rangenavigator.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.sparkline.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.sunburstchart.min.js" />
+    <Content Include="Scripts\ej\datavisualization\ej.treemap.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.ar-AE.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.de-DE.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.en-GB.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.en-US.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.es-ES.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.fr-FR.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.vi-VN.min.js" />
+    <Content Include="Scripts\ej\i18n\ej.culture.zh-CN.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.ar-AE.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.de-DE.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.en-GB.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.en-US.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.es-ES.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.fr-FR.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.vi-VN.min.js" />
+    <Content Include="Scripts\ej\l10n\ej.localetexts.zh-CN.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.accordion.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.all.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.application.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.autocomplete.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.button.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.core.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.datepicker.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.dialog.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.dropdownlist.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.editor.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.groupbutton.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.inputbutton.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.listview.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.menu.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.navigationbar.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.progressbar.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.radialmenu.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.radialslider.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.rating.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.rotator.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.scrollpanel.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.slider.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.splitpane.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.tab.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.tile.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.timepicker.min.js" />
+    <Content Include="Scripts\ej\mobile\ej.mobile.togglebutton.min.js" />
+    <Content Include="Scripts\ej\web\ej.accordion.min.js" />
+    <Content Include="Scripts\ej\web\ej.autocomplete.min.js" />
+    <Content Include="Scripts\ej\web\ej.button.min.js" />
+    <Content Include="Scripts\ej\web\ej.calculate.min.js" />
+    <Content Include="Scripts\ej\web\ej.captcha.min.js" />
+    <Content Include="Scripts\ej\web\ej.checkbox.min.js" />
+    <Content Include="Scripts\ej\web\ej.colorpicker.min.js" />
+    <Content Include="Scripts\ej\web\ej.combobox.min.js" />
+    <Content Include="Scripts\ej\web\ej.datepicker.min.js" />
+    <Content Include="Scripts\ej\web\ej.daterangepicker.min.js" />
+    <Content Include="Scripts\ej\web\ej.datetimepicker.min.js" />
+    <Content Include="Scripts\ej\web\ej.dialog.min.js" />
+    <Content Include="Scripts\ej\web\ej.documenteditor.min.js" />
+    <Content Include="Scripts\ej\web\ej.dropdownlist.min.js" />
+    <Content Include="Scripts\ej\web\ej.dropdowntree.min.js" />
+    <Content Include="Scripts\ej\web\ej.editor.min.js" />
+    <Content Include="Scripts\ej\web\ej.excelfilter.min.js" />
+    <Content Include="Scripts\ej\web\ej.fileexplorer.min.js" />
+    <Content Include="Scripts\ej\web\ej.gantt.min.js" />
+    <Content Include="Scripts\ej\web\ej.grid.min.js" />
+    <Content Include="Scripts\ej\web\ej.groupbutton.min.js" />
+    <Content Include="Scripts\ej\web\ej.kanban.min.js" />
+    <Content Include="Scripts\ej\web\ej.listbox.min.js" />
+    <Content Include="Scripts\ej\web\ej.listview.min.js" />
+    <Content Include="Scripts\ej\web\ej.maskedit.min.js" />
+    <Content Include="Scripts\ej\web\ej.mediaplayer.min.js" />
+    <Content Include="Scripts\ej\web\ej.menu.min.js" />
+    <Content Include="Scripts\ej\web\ej.navigationdrawer.min.js" />
+    <Content Include="Scripts\ej\web\ej.olap.base.min.js" />
+    <Content Include="Scripts\ej\web\ej.pager.min.js" />
+    <Content Include="Scripts\ej\web\ej.pdfviewer.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivot.common.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotanalysis.base.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotchart.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotclient.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotgauge.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotgrid.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotpager.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivotschemadesigner.min.js" />
+    <Content Include="Scripts\ej\web\ej.pivottreemap.min.js" />
+    <Content Include="Scripts\ej\web\ej.print.min.js" />
+    <Content Include="Scripts\ej\web\ej.progressbar.min.js" />
+    <Content Include="Scripts\ej\web\ej.radialmenu.min.js" />
+    <Content Include="Scripts\ej\web\ej.radialslider.min.js" />
+    <Content Include="Scripts\ej\web\ej.radiobutton.min.js" />
+    <Content Include="Scripts\ej\web\ej.rating.min.js" />
+    <Content Include="Scripts\ej\web\ej.recurrenceeditor.min.js" />
+    <Content Include="Scripts\ej\web\ej.ribbon.min.js" />
+    <Content Include="Scripts\ej\web\ej.rotator.min.js" />
+    <Content Include="Scripts\ej\web\ej.rte.min.js" />
+    <Content Include="Scripts\ej\web\ej.schedule.min.js" />
+    <Content Include="Scripts\ej\web\ej.signature.min.js" />
+    <Content Include="Scripts\ej\web\ej.slider.min.js" />
+    <Content Include="Scripts\ej\web\ej.spellcheck.min.js" />
+    <Content Include="Scripts\ej\web\ej.splitbutton.min.js" />
+    <Content Include="Scripts\ej\web\ej.splitter.min.js" />
+    <Content Include="Scripts\ej\web\ej.spreadsheet.min.js" />
+    <Content Include="Scripts\ej\web\ej.tab.min.js" />
+    <Content Include="Scripts\ej\web\ej.tagcloud.min.js" />
+    <Content Include="Scripts\ej\web\ej.tile.min.js" />
+    <Content Include="Scripts\ej\web\ej.timepicker.min.js" />
+    <Content Include="Scripts\ej\web\ej.togglebutton.min.js" />
+    <Content Include="Scripts\ej\web\ej.toolbar.min.js" />
+    <Content Include="Scripts\ej\web\ej.tooltip.min.js" />
+    <Content Include="Scripts\ej\web\ej.treegrid.min.js" />
+    <Content Include="Scripts\ej\web\ej.treeview.min.js" />
+    <Content Include="Scripts\ej\web\ej.uploadbox.min.js" />
+    <Content Include="Scripts\ej\web\ej.waitingpopup.min.js" />
+    <Content Include="Scripts\ej\web\ej.web.all.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jsrender.min.js" />
+    <Content Include="ServiceEmailPowerBISetup.aspx" />
+    <Content Include="SkillAssesment\SkillAssessment.aspx" />
+    <Content Include="SkillAssesment\SkillAssessmentPopup.aspx" />
+    <Content Include="SkillAssesment\SkillAssessmentReport.aspx" />
+    <Content Include="SkillAssesment\TNA.aspx" />
+    <Content Include="Testform.aspx" />
+    <Content Include="TestForm1.aspx" />
+    <Content Include="TIMESHEET\AreaMaster.aspx" />
+    <Content Include="TIMESHEET\BSTimesheet.aspx" />
+    <Content Include="TIMESHEET\BSTimesheetReport.aspx" />
+    <Content Include="TIMESHEET\BusinessSupport.aspx" />
+    <Content Include="TIMESHEET\HybridModel.aspx" />
+    <Content Include="TIMESHEET\HybridReport.aspx" />
+    <Content Include="TIMESHEET\ProductStandardHoursMaster.aspx" />
+    <Content Include="TIMESHEET\SchedulingScreen.aspx" />
+    <Content Include="TIMESHEET\TaskMaster.aspx" />
+    <Content Include="TIMESHEET\TaskTypeMaster.aspx" />
+    <Content Include="TIMESHEET\TimeSheetList.aspx" />
+    <Content Include="TIMESHEET\TimesheetReport.aspx" />
+    <Content Include="TIMESHEET\TimeSheetUploadSchedule.aspx" />
+    <Content Include="TrainingApp.aspx" />
+    <Content Include="Training_Tracking\SubconCertification.aspx" />
+    <Content Include="Training_Tracking\SubConEmployeeMaster.aspx" />
+    <Content Include="Training_Tracking\SubConRegistration.aspx" />
+    <Content Include="Training_Tracking\SubConRegReport.aspx" />
+    <Content Include="Training_Tracking\SubconRoleMaster.aspx" />
+    <Content Include="Training_Tracking\SubconVendorApproval.aspx" />
+    <Content Include="Training_Tracking\TrainingandTracking.aspx" />
+    <Content Include="Training_Tracking\TrainingCategoryMaster.aspx" />
+    <Content Include="Training_Tracking\TrainingTrackingReport.aspx" />
+    <Content Include="Training_Tracking\VendorMaster.aspx" />
+    <Content Include="UnderConstruction.aspx" />
+    <Content Include="UploadScreens\Awareness.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserCreation.aspx.cs">
+      <DependentUpon>UserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserCreation.aspx.designer.cs">
+      <DependentUpon>UserCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalPopup.aspx.cs">
+      <DependentUpon>ApprovalPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovalPopup.aspx.designer.cs">
+      <DependentUpon>ApprovalPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalScreen.aspx.cs">
+      <DependentUpon>ApprovalScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApprovalScreen.aspx.designer.cs">
+      <DependentUpon>ApprovalScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessSupport.aspx.cs">
+      <DependentUpon>BusinessSupport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessSupport.aspx.designer.cs">
+      <DependentUpon>BusinessSupport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeRegistration.aspx.cs">
+      <DependentUpon>EmployeeRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeRegistration.aspx.designer.cs">
+      <DependentUpon>EmployeeRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeRegistrationPopup.aspx.cs">
+      <DependentUpon>EmployeeRegistrationPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeRegistrationPopup.aspx.designer.cs">
+      <DependentUpon>EmployeeRegistrationPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\EngineeringInduction.aspx.cs">
+      <DependentUpon>EngineeringInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\EngineeringInduction.aspx.designer.cs">
+      <DependentUpon>EngineeringInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\FinanceInduction.aspx.cs">
+      <DependentUpon>FinanceInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\FinanceInduction.aspx.designer.cs">
+      <DependentUpon>FinanceInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\FODServices.aspx.cs">
+      <DependentUpon>FODServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\FODServices.aspx.designer.cs">
+      <DependentUpon>FODServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\FODSite.aspx.cs">
+      <DependentUpon>FODSite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\FODSite.aspx.designer.cs">
+      <DependentUpon>FODSite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\HRInduction.aspx.cs">
+      <DependentUpon>HRInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\HRInduction.aspx.designer.cs">
+      <DependentUpon>HRInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\ITInduction.aspx.cs">
+      <DependentUpon>ITInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\ITInduction.aspx.designer.cs">
+      <DependentUpon>ITInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\PlanningInduction.aspx.cs">
+      <DependentUpon>PlanningInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\PlanningInduction.aspx.designer.cs">
+      <DependentUpon>PlanningInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\ProductionInduction.aspx.cs">
+      <DependentUpon>ProductionInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\ProductionInduction.aspx.designer.cs">
+      <DependentUpon>ProductionInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\PurchaseInduction.aspx.cs">
+      <DependentUpon>PurchaseInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\PurchaseInduction.aspx.designer.cs">
+      <DependentUpon>PurchaseInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\SafetyInduction.aspx.cs">
+      <DependentUpon>SafetyInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\SafetyInduction.aspx.designer.cs">
+      <DependentUpon>SafetyInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Induction\SalesInduction.aspx.cs">
+      <DependentUpon>SalesInduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Induction\SalesInduction.aspx.designer.cs">
+      <DependentUpon>SalesInduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetPortalLogin.aspx.cs">
+      <DependentUpon>IntranetPortalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetPortalLogin.aspx.designer.cs">
+      <DependentUpon>IntranetPortalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IntranetPortalNewLogin.aspx.cs">
+      <DependentUpon>IntranetPortalNewLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IntranetPortalNewLogin.aspx.designer.cs">
+      <DependentUpon>IntranetPortalNewLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LandingPage\LandingPage.aspx.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LandingPage\LandingPage.aspx.designer.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LandingPage\Models\LandingPageModel.cs" />
+    <Compile Include="LandingPage\SupportClass\LandingPageService.cs" />
+    <Compile Include="LandingPage\SupportClass\VideoService.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SkillGoalMapping.aspx.cs">
+      <DependentUpon>SkillGoalMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\SkillGoalMapping.aspx.designer.cs">
+      <DependentUpon>SkillGoalMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SkillMappingMaster.aspx.cs">
+      <DependentUpon>SkillMappingMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\SkillMappingMaster.aspx.designer.cs">
+      <DependentUpon>SkillMappingMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\DepartmentMaster.aspx.cs">
+      <DependentUpon>DepartmentMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\DepartmentMaster.aspx.designer.cs">
+      <DependentUpon>DepartmentMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\DesignationMaster.aspx.cs">
+      <DependentUpon>DesignationMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\DesignationMaster.aspx.designer.cs">
+      <DependentUpon>DesignationMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\EmployeeMaster.aspx.cs">
+      <DependentUpon>EmployeeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\EmployeeMaster.aspx.designer.cs">
+      <DependentUpon>EmployeeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\ClosedMargin.aspx.cs">
+      <DependentUpon>ClosedMargin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\ClosedMargin.aspx.designer.cs">
+      <DependentUpon>ClosedMargin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\DashboardDeliveryEquipmentRpt.aspx.cs">
+      <DependentUpon>DashboardDeliveryEquipmentRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\DashboardDeliveryEquipmentRpt.aspx.designer.cs">
+      <DependentUpon>DashboardDeliveryEquipmentRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\DomesticWarehouseDashboard.aspx.cs">
+      <DependentUpon>DomesticWarehouseDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\DomesticWarehouseDashboard.aspx.designer.cs">
+      <DependentUpon>DomesticWarehouseDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\ExportWarehouseDashboard.aspx.cs">
+      <DependentUpon>ExportWarehouseDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\ExportWarehouseDashboard.aspx.designer.cs">
+      <DependentUpon>ExportWarehouseDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\InventoryDetailedReport.aspx.cs">
+      <DependentUpon>InventoryDetailedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\InventoryDetailedReport.aspx.designer.cs">
+      <DependentUpon>InventoryDetailedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\InventoryReport.aspx.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\InventoryReport.aspx.designer.cs">
+      <DependentUpon>InventoryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MISReports\WarehouseDashboard.aspx.cs">
+      <DependentUpon>WarehouseDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MISReports\WarehouseDashboard.aspx.designer.cs">
+      <DependentUpon>WarehouseDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewandEventPopup.aspx.cs">
+      <DependentUpon>NewandEventPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewandEventPopup.aspx.designer.cs">
+      <DependentUpon>NewandEventPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsEvents.aspx.cs">
+      <DependentUpon>NewsEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsEvents.aspx.designer.cs">
+      <DependentUpon>NewsEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualityApp.aspx.cs">
+      <DependentUpon>QualityApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QualityApp.aspx.designer.cs">
+      <DependentUpon>QualityApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Safety.aspx.cs">
+      <DependentUpon>Safety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Safety.aspx.designer.cs">
+      <DependentUpon>Safety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SafetySTBT.aspx.cs">
+      <DependentUpon>SafetySTBT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SafetySTBT.aspx.designer.cs">
+      <DependentUpon>SafetySTBT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SafetyTBT.aspx.cs">
+      <DependentUpon>SafetyTBT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SafetyTBT.aspx.designer.cs">
+      <DependentUpon>SafetyTBT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceEmailPowerBISetup.aspx.cs">
+      <DependentUpon>ServiceEmailPowerBISetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceEmailPowerBISetup.aspx.designer.cs">
+      <DependentUpon>ServiceEmailPowerBISetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SkillAssesment\SkillAssessment.aspx.cs">
+      <DependentUpon>SkillAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillAssesment\SkillAssessment.aspx.designer.cs">
+      <DependentUpon>SkillAssessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillAssesment\SkillAssessmentPopup.aspx.cs">
+      <DependentUpon>SkillAssessmentPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillAssesment\SkillAssessmentPopup.aspx.designer.cs">
+      <DependentUpon>SkillAssessmentPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillAssesment\SkillAssessmentReport.aspx.cs">
+      <DependentUpon>SkillAssessmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillAssesment\SkillAssessmentReport.aspx.designer.cs">
+      <DependentUpon>SkillAssessmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillAssesment\TNA.aspx.cs">
+      <DependentUpon>TNA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillAssesment\TNA.aspx.designer.cs">
+      <DependentUpon>TNA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testform.aspx.cs">
+      <DependentUpon>Testform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testform.aspx.designer.cs">
+      <DependentUpon>Testform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm1.aspx.cs">
+      <DependentUpon>TestForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestForm1.aspx.designer.cs">
+      <DependentUpon>TestForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\AreaMaster.aspx.cs">
+      <DependentUpon>AreaMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\AreaMaster.aspx.designer.cs">
+      <DependentUpon>AreaMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\BSTimesheet.aspx.cs">
+      <DependentUpon>BSTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\BSTimesheet.aspx.designer.cs">
+      <DependentUpon>BSTimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\BSTimesheetReport.aspx.cs">
+      <DependentUpon>BSTimesheetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\BSTimesheetReport.aspx.designer.cs">
+      <DependentUpon>BSTimesheetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\BusinessSupport.aspx.cs">
+      <DependentUpon>BusinessSupport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\BusinessSupport.aspx.designer.cs">
+      <DependentUpon>BusinessSupport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\HybridModel.aspx.cs">
+      <DependentUpon>HybridModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\HybridModel.aspx.designer.cs">
+      <DependentUpon>HybridModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\HybridReport.aspx.cs">
+      <DependentUpon>HybridReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\HybridReport.aspx.designer.cs">
+      <DependentUpon>HybridReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\ProductStandardHoursMaster.aspx.cs">
+      <DependentUpon>ProductStandardHoursMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\ProductStandardHoursMaster.aspx.designer.cs">
+      <DependentUpon>ProductStandardHoursMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\SchedulingScreen.aspx.cs">
+      <DependentUpon>SchedulingScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\SchedulingScreen.aspx.designer.cs">
+      <DependentUpon>SchedulingScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\TaskMaster.aspx.cs">
+      <DependentUpon>TaskMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\TaskMaster.aspx.designer.cs">
+      <DependentUpon>TaskMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\TaskTypeMaster.aspx.cs">
+      <DependentUpon>TaskTypeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\TaskTypeMaster.aspx.designer.cs">
+      <DependentUpon>TaskTypeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\TimeSheetList.aspx.cs">
+      <DependentUpon>TimeSheetList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\TimeSheetList.aspx.designer.cs">
+      <DependentUpon>TimeSheetList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\TimesheetReport.aspx.cs">
+      <DependentUpon>TimesheetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\TimesheetReport.aspx.designer.cs">
+      <DependentUpon>TimesheetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TIMESHEET\TimeSheetUploadSchedule.aspx.cs">
+      <DependentUpon>TimeSheetUploadSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TIMESHEET\TimeSheetUploadSchedule.aspx.designer.cs">
+      <DependentUpon>TimeSheetUploadSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingApp.aspx.cs">
+      <DependentUpon>TrainingApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingApp.aspx.designer.cs">
+      <DependentUpon>TrainingApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\SubconCertification.aspx.cs">
+      <DependentUpon>SubconCertification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\SubconCertification.aspx.designer.cs">
+      <DependentUpon>SubconCertification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\SubConEmployeeMaster.aspx.cs">
+      <DependentUpon>SubConEmployeeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\SubConEmployeeMaster.aspx.designer.cs">
+      <DependentUpon>SubConEmployeeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\SubConRegistration.aspx.cs">
+      <DependentUpon>SubConRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\SubConRegistration.aspx.designer.cs">
+      <DependentUpon>SubConRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\SubConRegReport.aspx.cs">
+      <DependentUpon>SubConRegReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\SubConRegReport.aspx.designer.cs">
+      <DependentUpon>SubConRegReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\SubconRoleMaster.aspx.cs">
+      <DependentUpon>SubconRoleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\SubconRoleMaster.aspx.designer.cs">
+      <DependentUpon>SubconRoleMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\SubconVendorApproval.aspx.cs">
+      <DependentUpon>SubconVendorApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\SubconVendorApproval.aspx.designer.cs">
+      <DependentUpon>SubconVendorApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\TrainingandTracking.aspx.cs">
+      <DependentUpon>TrainingandTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\TrainingandTracking.aspx.designer.cs">
+      <DependentUpon>TrainingandTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\TrainingCategoryMaster.aspx.cs">
+      <DependentUpon>TrainingCategoryMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\TrainingCategoryMaster.aspx.designer.cs">
+      <DependentUpon>TrainingCategoryMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\TrainingTrackingReport.aspx.cs">
+      <DependentUpon>TrainingTrackingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\TrainingTrackingReport.aspx.designer.cs">
+      <DependentUpon>TrainingTrackingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Tracking\VendorMaster.aspx.cs">
+      <DependentUpon>VendorMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Tracking\VendorMaster.aspx.designer.cs">
+      <DependentUpon>VendorMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.cs">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderConstruction.aspx.designer.cs">
+      <DependentUpon>UnderConstruction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadScreens\Awareness.aspx.cs">
+      <DependentUpon>Awareness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadScreens\Awareness.aspx.designer.cs">
+      <DependentUpon>Awareness.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\la-brands-400.eot" />
+    <Content Include="assets\fonts\la-brands-400.ttf" />
+    <Content Include="assets\fonts\la-brands-400.woff" />
+    <Content Include="assets\fonts\la-brands-400.woff2" />
+    <Content Include="assets\fonts\la-regular-400.eot" />
+    <Content Include="assets\fonts\la-regular-400.ttf" />
+    <Content Include="assets\fonts\la-regular-400.woff" />
+    <Content Include="assets\fonts\la-regular-400.woff2" />
+    <Content Include="assets\fonts\la-solid-900.eot" />
+    <Content Include="assets\fonts\la-solid-900.ttf" />
+    <Content Include="assets\fonts\la-solid-900.woff" />
+    <Content Include="assets\fonts\la-solid-900.woff2" />
+    <Content Include="assets\fonts\opensans-bold-webfont.woff" />
+    <Content Include="assets\fonts\opensans-bold-webfont.woff2" />
+    <Content Include="assets\fonts\opensans-light-webfont.woff" />
+    <Content Include="assets\fonts\opensans-light-webfont.woff2" />
+    <Content Include="assets\fonts\opensans-regular-webfont.woff" />
+    <Content Include="assets\fonts\opensans-regular-webfont.woff2" />
+    <Content Include="assets\style_backup.css.bak" />
+    <Content Include="Content\BONZAI-Intranet-The-Ideal-Intranet-Project-Team-Handbook.pptx" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\CleanDeskPolicyPoster.pdf" />
+    <Content Include="Content\image\ASP.Net_ How to connect Web Forms to SQL Server Database_ - TechNet Articles - United States %28English%29 - TechNet Wiki.pdf" />
+    <Content Include="Content\image\How To Connect SQL Database In ASP.NET Using C# And Insert And View The Data Using Visual Studio 2015.pdf" />
+    <Content Include="Content\image\How To Create Login Page In ASP.NET Web Application Using C# And SQL Server.pdf" />
+    <Content Include="Content\image\Validate_ Email ID, GST Number, Bank IFSC Code, PAN Number.pdf" />
+    <Content Include="Content\image\Various Ways To Specify Connection String In ASP.NET Web And Windows Applications.pdf" />
+    <Content Include="Content\PPT" />
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmployeePhoto\" />
+    <Folder Include="NewsEvents\" />
+    <Folder Include="PDFIDCARD\Photo\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60353</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44320/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
