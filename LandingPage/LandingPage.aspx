@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs"
     Inherits="FujiTecIntranetPortal.LandingPage.LandingPage" ValidateRequest="false" %>
-
+ 
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -9,19 +9,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="CSS/layout.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/main-header.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/event-slide-show.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/news-container.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/employee-slide-show.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/employee-contact-show.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/awareness-slide-show.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/project-gallery-slide-show.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/quotes-container.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/video-container.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/quicklinks-container.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/login-form.css?v={random number/string}" />
-    <link rel="stylesheet" href="CSS/site-navigation.css?v={random number/string}" />
+    <link rel="stylesheet" href="CSS/layout.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/main-header.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/event-slide-show.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/news-container.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/employee-slide-show.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/employee-contact-show.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/awareness-slide-show.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/project-gallery-slide-show.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/quotes-container.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/video-container.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/quicklinks-container.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/login-form.css?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" href="CSS/site-navigation.css?v=<%= DateTime.Now.Ticks %>" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
     <link rel="stylesheet"
@@ -32,6 +32,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rambla:ital,wght@1,700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" />
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
+    <style>
+        /* Timer Animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .timer-pulse {
+            animation: pulse 1s ease-in-out infinite;
+        }
+    </style>
 </head>
 
 <body>
@@ -90,6 +117,68 @@
                 </asp:Panel>
             </div>
         </div>
+
+        <!-- Video Overlay - Place outside of sections -->
+        <div class="video-overlay" 
+             style="position:fixed; 
+                    top:0; 
+                    left:0; 
+                    width:100%; 
+                    height:100%; 
+                    background: 
+                        linear-gradient(to top, rgba(205,28,24,0.2), rgba(0,0,0,0.4) 40%, rgba(0,0,0,0)), 
+                        url('assets/images/what-is-cybersecurity.jpg') no-repeat center center; 						
+                    background-size: cover;
+                    color:#fff; 
+                    display:flex; 
+                    flex-direction:column; 
+                    align-items:center; 
+                    justify-content:center; 
+                    font-family: 'Segoe UI', Arial, sans-serif; 
+                    z-index:9999; 
+                    text-align:center;
+                    transition: opacity 0.5s ease-out;">
+            
+            <!-- Enhanced Countdown Timer in Top Right -->
+            <div id="overlayTimer" 
+                 style="position:absolute; 
+                        top:30px; 
+                        right:30px; 
+                        font-size:16px; 
+                        font-weight:500; 
+                        background: linear-gradient(135deg, rgba(0,150,136,0.95), rgba(0,121,107,0.95));
+                        padding:15px 25px; 
+                        border-radius:50px;
+                        border:2px solid rgba(255,255,255,0.5);
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(0,150,136,0.3);
+                        backdrop-filter: blur(10px);
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        animation: slideInFromRight 0.5s ease-out;">
+                
+                <!-- Clock Icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                
+                <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
+                    <span style="font-size:11px; opacity:0.9; text-transform: uppercase; letter-spacing: 0.5px;">Auto-closing</span>
+                    <span style="font-size:20px; font-weight:700; letter-spacing: 1px;">
+                        <span id="timerSeconds" class="timer-pulse">10</span>s
+                    </span>
+                </div>
+            </div>
+
+            <div style="font-size:32px; font-weight:bold; letter-spacing:1px; line-height:1.5;">
+                Do you know what is Data Protection?<br>
+                Phishing?<br>
+                Spoofing?<br><br>
+                Stay Tuned...
+            </div>
+        </div>
+
 
         <script>
 
@@ -292,7 +381,7 @@
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row">					
 
                         <div class="video-container">
                             <video autoplay controls playsinline controls controlslist="nodownload"></video>
@@ -341,22 +430,22 @@
                  </a>--%>
             </div>
         </div>
-
+						
         <div class="site-navigation" id="sitenavigation">           
                 <div class="circle" data-section="#section1"></div>
                 <div class="circle" data-section="#section2"></div>
                 <div class="circle" data-section="#section3"></div>    
         </div>
 
-        <script src="JS/event-slide-show.js?v={random number/string}"></script>
-        <script src="JS/news-renderer.js?v={random number/string}"></script>
-        <script src="JS/employee-slide-show.js?v={random number/string}"></script>
-        <script src="JS/employee-contact-show.js?v={random number/string}"></script>
-        <script src="JS/awareness-slide-show.js?v={random number/string}"></script>
-        <script src="JS/project-gallery-slide-show.js?v={random number/string}"></script>
-        <script src="JS/quotes-container.js?v={random number/string}"></script>
-        <script src="JS/video-container.js?v={random number/string}"></script>
-        <script src="JS/quicklinks-container.js?v={random number/string}"></script>
+        <script src="JS/event-slide-show.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/news-renderer.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/employee-slide-show.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/employee-contact-show.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/awareness-slide-show.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/project-gallery-slide-show.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/quotes-container.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/video-container.js?v=<%= DateTime.Now.Ticks %>"></script>
+        <script src="JS/quicklinks-container.js?v=<%= DateTime.Now.Ticks %>"></script>
 
 
         <script>
@@ -394,6 +483,34 @@
                         }
                     });
                 });
+
+                // Auto-hide video overlay after 10 seconds with countdown timer
+                const videoOverlay = document.querySelector('.video-overlay');
+                const timerElement = document.getElementById('timerSeconds');
+                
+                if (videoOverlay && timerElement) {
+                    let timeLeft = 10;
+                    
+                    // Update countdown every second
+                    const countdownInterval = setInterval(function() {
+                        timeLeft--;
+                        timerElement.textContent = timeLeft;
+                        
+                        if (timeLeft <= 0) {
+                            clearInterval(countdownInterval);
+                        }
+                    }, 1000);
+                    
+                    // Fade out after 10 seconds
+                    setTimeout(function() {
+                        videoOverlay.style.opacity = '0';
+                        
+                        // Completely hide after fade animation completes
+                        setTimeout(function() {
+                            videoOverlay.style.display = 'none';
+                        }, 500); // Wait for 0.5s transition to complete
+                    }, 10000); // 10 seconds
+                }
             });
 
 
@@ -430,6 +547,7 @@
 
         </script>
     </form>
-</body>
 
+</body> 
+ 
 </html>

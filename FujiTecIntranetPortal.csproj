@@ -1194,6 +1194,7 @@
     <Content Include="LandingPage\JS\quotes-container.js" />
     <Content Include="LandingPage\JS\video-container.js" />
     <Content Include="LandingPage\LandingPage.aspx" />
+    <Content Include="LandingPage\LandingVideo.aspx" />
     <Content Include="LandingPage\Resource\employee_contact_bg.png" />
     <Content Include="LandingPage\Resource\employee_slide_show_bg.png" />
     <Content Include="LandingPage\Resource\fujitec-logo.png" />
@@ -1807,6 +1808,13 @@
     </Compile>
     <Compile Include="LandingPage\LandingPage.aspx.designer.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LandingPage\LandingVideo.aspx.cs">
+      <DependentUpon>LandingVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LandingPage\LandingVideo.aspx.designer.cs">
+      <DependentUpon>LandingVideo.aspx</DependentUpon>
     </Compile>
     <Compile Include="LandingPage\Models\LandingPageModel.cs" />
     <Compile Include="LandingPage\SupportClass\LandingPageService.cs" />
