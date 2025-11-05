@@ -17,7 +17,7 @@
                     <th class="auto-style2"><strong>Event Photo: <span class="hlt-txt">*</span></strong>
                     </th>
                     <td>
-                        <asp:Image ID="img_Empphoto" runat="server" Height="160px" Width="180px" ImageAlign="NotSet" />
+                        <asp:Image ID="img_Empphoto" runat="server" Height="101px" Width="180px" ImageAlign="NotSet" />
                     </td>
                 </tr>
             </table>
