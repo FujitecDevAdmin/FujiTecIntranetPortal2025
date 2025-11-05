@@ -7,7 +7,6 @@
         <div>
             <table>
                 <tr>
-
                     <th class="auto-style2"><strong>Event Name: <span class="hlt-txt">*</span></strong>
                     </th>
                     <td class="auto-style2">
