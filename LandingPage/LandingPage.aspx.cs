@@ -57,33 +57,43 @@ namespace FujiTecIntranetPortal.LandingPage
             // Check if it's the initial page load and the control is not null
             if (!IsPostBack)
             {
-                //// Read setting or environment variable
-                //string showVideo = ConfigurationManager.AppSettings["ShowLandingVideo"];
-                //if (string.IsNullOrEmpty(showVideo))
-                //{
-                //    showVideo = Environment.GetEnvironmentVariable("ShowLandingVideo");
-                //}
+                // Check if landing video feature is enabled in Web.config
+                string showLandingVideoSetting = ConfigurationManager.AppSettings["ShowLandingVideo"];
+                bool isLandingVideoEnabled = !string.IsNullOrEmpty(showLandingVideoSetting) &&
+                                            showLandingVideoSetting.Equals("true", StringComparison.OrdinalIgnoreCase);
 
-                //bool showLandingVideo = !string.IsNullOrEmpty(showVideo) &&
-                //    showVideo.Equals("true", StringComparison.OrdinalIgnoreCase);
+                // Check if user has already viewed the landing video in this session
+                bool hasViewedLandingVideo = Session["LandingVideoLoaded"] != null;
 
-                //// Redirect based on the flag
-                //if (showLandingVideo)
-                //{
-                //    Response.Redirect("~/LandingPage/LandingVideo.aspx", false);
-                //    Context.ApplicationInstance.CompleteRequest();
-                //    return; // Stop further execution
-                //}
-
+                if (isLandingVideoEnabled && !hasViewedLandingVideo)
+                {
+                    Response.Redirect("~/LandingPage/LandingVideo.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                    return;
+                }
 
                 ScanVideos();
                 LoadItems();
                 AssignItemsToHiddenFields();
 
-                //ShowPopupButton.Attributes.Add("onclick", "showPopup(); return false;");
             }
 
         }
+
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        public static void SetSessionValue(string key, string value)
+        {
+            HttpContext.Current.Session[key] = value;
+        }
+
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        public static string GetSessionValue(string key)
+        {
+            var value = HttpContext.Current.Session[key];
+            return value != null ? value.ToString() : null;
+        }
+
+
 
         public void ScanVideos()
         {
@@ -122,7 +132,7 @@ namespace FujiTecIntranetPortal.LandingPage
 
             // Fetch FlashNewsItems
             flashNewsItem = GetItemsOfType<FlashNewsItem>("FlashNews");
-          //  GetMarqueeContent();
+            //  GetMarqueeContent();
 
         }
 
@@ -225,7 +235,7 @@ namespace FujiTecIntranetPortal.LandingPage
                     content.Append("<strong style='color:red; background-color:yellow;'>").Append(news.Title).Append("</strong>").Append(" ");
                     content.Append("<span style='font-size: 20px; color: red;'>&#9888;</span>").Append(" ");
                     content.Append("<span>").Append(news.Description).Append("</span>");
-                   // content.Append("good morning ").Append("vinoth ").Append("ready ");
+                    // content.Append("good morning ").Append("vinoth ").Append("ready ");
                 }
 
                 content.Append("</div>");

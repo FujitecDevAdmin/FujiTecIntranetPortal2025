@@ -97,7 +97,7 @@
         <asp:HiddenField runat="server" ClientIDMode="Static" ID="videoData" />
         <asp:HiddenField runat="server" ClientIDMode="Static" ID="quickLinksData" />
         <asp:HiddenField runat="server" ClientIDMode="Static" ID="flashNewsData" />
-
+ 
 
         <!-- Popup form -->
         <div runat="server" id="popupForm" class="popup" clientidmode="Static">
@@ -118,7 +118,7 @@
             </div>
         </div>
 
-        <!-- Video Overlay - Place outside of sections -->
+        <%--<!-- Video Overlay - Place outside of sections -->
         <div class="video-overlay" 
              style="position:fixed; 
                     top:0; 
@@ -177,7 +177,7 @@
                 Spoofing?<br><br>
                 Stay Tuned...
             </div>
-        </div>
+        </div>--%>
 
 
         <script>
@@ -189,7 +189,7 @@
             function hidePopup() {
                 document.getElementById('popupForm').style.display = 'none';
             }
-        </script>
+        </script>        
 
         <!-- Popup form -->
 
@@ -543,6 +543,29 @@
                 if (section) {
                     section.scrollIntoView({ behavior: "smooth" });
                 }
+            }
+
+            function setSessionVar() {
+                $.ajax({
+                    type: "POST",
+                    url: "LandingPage.aspx/SetSessionValue",
+                    data: JSON.stringify({ key: "UserId", value: "12345" }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                });
+            }
+
+            function getSessionVar() {
+                $.ajax({
+                    type: "POST",
+                    url: "LandingPage.aspx/GetSessionValue",
+                    data: JSON.stringify({ key: "UserId" }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log("Session value:", response.d);
+                    }
+                });
             }
 
         </script>

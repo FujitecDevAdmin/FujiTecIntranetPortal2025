@@ -198,7 +198,7 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" onsubmit="return false;">
         <!-- Intro Screen -->
         <div id="introScreen" class="intro-screen">
             <h1>IT Awareness Program</h1>
@@ -213,7 +213,7 @@
 
             <div class="button-group">
                 <button type="button" class="btn btn-play" onclick="startVideo()">▶ Play Video</button>
-                <button type="button" class="btn btn-skip" id="skipBtn" onclick="skipVideo()">⏭ Skip</button>
+                <button type="button" class="btn btn-skip" id="skipBtn" onclick="skipVideo(event);">⏭ Skip</button>
             </div>
         </div>
 
@@ -234,12 +234,14 @@
                     After submitting your responses, kindly return to this page and click the <strong>“Go to Confluence”</strong> button to proceed.
                 </p>
                 <div class="popup-buttons">
-                    <button type="button" class="btn btn-secondary" onclick="goBack()">Go to Confluence</button>
+                    <button type="button" class="btn btn-secondary" onclick="goBack(event);">Go to Confluence</button>
                     <button type="button" class="btn btn-primary" onclick="openTest()">Next</button>
                 </div>
             </div>
         </div>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
         const introScreen = document.getElementById('introScreen');
@@ -264,8 +266,15 @@
             localStorage.setItem('videoWatchedDate', today);
         }
 
-        function skipVideo() {
-            window.location.href = '<%= ResolveUrl("~/LandingPage/LandingPage.aspx") %>';
+        function skipVideo(event) {
+            event.preventDefault();
+            localStorage.setItem('VideoSkipped', 'true');
+            setSessionVar();
+            getSessionVar();
+
+            var url = '<%= ResolveUrl("~/LandingPage/LandingPage.aspx") %>';
+
+            window.top.location.replace(url);
         }
 
         video.addEventListener('ended', function () {
@@ -273,14 +282,43 @@
             localStorage.setItem('videoWatchedDate', today);
         });
 
-        function goBack() {
-            window.location.href = '<%= ResolveUrl("~/LandingPage/LandingPage.aspx") %>';
+        function goBack(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            localStorage.setItem('VideoSkipped', 'true');
+
+            var url = '<%= ResolveUrl("~/LandingPage/LandingPage.aspx") %>';
+
+            window.location.replace(url);
         }
 
-        // ✅ Updated: Save answeredQuestionsDate when clicking the test link
+        function setSessionVar() {
+            $.ajax({
+                type: "POST",
+                url: "LandingVideo.aspx/SetSessionValue",
+                data: JSON.stringify({ key: "UserId", value: "12345" }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json"
+            });
+        }
+
+        function getSessionVar() {
+            $.ajax({
+                type: "POST",
+                url: "LandingVideo.aspx/GetSessionValue",
+                data: JSON.stringify({ key: "UserId" }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    alert("Session value: " + response.d);
+                }
+            });
+        }
+
+        //  Updated: Save answeredQuestionsDate when clicking the test link
         function openTest() {
             localStorage.setItem('answeredQuestionsDate', today);
-            window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=cGRWGYRFE0q3HXd93k8reqlqVNYTEopJulmvBRbaD2ZUQjlHV1JJUE9HNUFCNkZZWFJJSks1UDRGVC4u', '_blank');
+            window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=cGRWGYRFE0q3HXd93k8reqlqVNYTEopJulmvBRbaD2ZUOEgyMkpSTDdLOTYzVTJVNzAwRVpQNkZMUC4u', '_blank');
         }
 
         document.addEventListener('keydown', function (event) {
