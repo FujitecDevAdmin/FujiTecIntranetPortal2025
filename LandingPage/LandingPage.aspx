@@ -545,6 +545,29 @@
                 }
             }
 
+            function setSessionVar() {
+                $.ajax({
+                    type: "POST",
+                    url: "LandingPage.aspx/SetSessionValue",
+                    data: JSON.stringify({ key: "UserId", value: "12345" }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                });
+            }
+
+            function getSessionVar() {
+                $.ajax({
+                    type: "POST",
+                    url: "LandingPage.aspx/GetSessionValue",
+                    data: JSON.stringify({ key: "UserId" }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log("Session value:", response.d);
+                    }
+                });
+            }
+
         </script>
     </form>
 

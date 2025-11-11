@@ -241,6 +241,8 @@
         </div>
     </form>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         const introScreen = document.getElementById('introScreen');
         const videoContainer = document.getElementById('videoContainer');
@@ -267,11 +269,10 @@
         function skipVideo(event) {
             event.preventDefault();
             localStorage.setItem('VideoSkipped', 'true');
+            setSessionVar();
+            getSessionVar();
 
             var url = '<%= ResolveUrl("~/LandingPage/LandingPage.aspx") %>';
-
-            alert("Redirecting to: " + url);
-            console.log("Redirecting to: " + url);
 
             window.top.location.replace(url);
         }
@@ -287,13 +288,34 @@
             localStorage.setItem('VideoSkipped', 'true');
 
             var url = '<%= ResolveUrl("~/LandingPage/LandingPage.aspx") %>';
-            console.log("Redirecting to: " + url);
-            alert("Redirecting to: " + url);
 
             window.location.replace(url);
         }
 
-        // ✅ Updated: Save answeredQuestionsDate when clicking the test link
+        function setSessionVar() {
+            $.ajax({
+                type: "POST",
+                url: "LandingVideo.aspx/SetSessionValue",
+                data: JSON.stringify({ key: "UserId", value: "12345" }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json"
+            });
+        }
+
+        function getSessionVar() {
+            $.ajax({
+                type: "POST",
+                url: "LandingVideo.aspx/GetSessionValue",
+                data: JSON.stringify({ key: "UserId" }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    alert("Session value: " + response.d);
+                }
+            });
+        }
+
+        //  Updated: Save answeredQuestionsDate when clicking the test link
         function openTest() {
             localStorage.setItem('answeredQuestionsDate', today);
             window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=cGRWGYRFE0q3HXd93k8reqlqVNYTEopJulmvBRbaD2ZUOEgyMkpSTDdLOTYzVTJVNzAwRVpQNkZMUC4u', '_blank');
