@@ -57,23 +57,34 @@ namespace FujiTecIntranetPortal.LandingPage
             // Check if it's the initial page load and the control is not null
             if (!IsPostBack)
             {
-                //// Read setting or environment variable
-                //string showVideo = ConfigurationManager.AppSettings["ShowLandingVideo"];
-                //if (string.IsNullOrEmpty(showVideo))
-                //{
-                //    showVideo = Environment.GetEnvironmentVariable("ShowLandingVideo");
-                //}
+                // Read setting or environment variable
+                string showVideo = ConfigurationManager.AppSettings["ShowLandingVideo"];
+                if (string.IsNullOrEmpty(showVideo))
+                {
+                    showVideo = Environment.GetEnvironmentVariable("ShowLandingVideo");
+                }
 
-                //bool showLandingVideo = !string.IsNullOrEmpty(showVideo) &&
-                //    showVideo.Equals("true", StringComparison.OrdinalIgnoreCase);
+                // default false
+                bool skipStatus = false;
 
-                //// Redirect based on the flag
-                //if (showLandingVideo)
-                //{
-                //    Response.Redirect("~/LandingPage/LandingVideo.aspx", false);
-                //    Context.ApplicationInstance.CompleteRequest();
-                //    return; // Stop further execution
-                //}
+                // read hidden field coming from JS/localStorage
+                if (!string.IsNullOrEmpty(hfSkipVideo.Value))
+                {
+                    bool.TryParse(hfSkipVideo.Value, out skipStatus);
+                }
+
+                // Condition: Config says show video AND user has not skipped
+                bool showLandingVideo =
+                    !string.IsNullOrEmpty(showVideo) &&
+                    showVideo.Equals("true", StringComparison.OrdinalIgnoreCase) &&
+                    !skipStatus;
+
+                if (showLandingVideo)
+                {
+                    Response.Redirect("~/LandingPage/LandingVideo.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                    return;
+                }
 
 
                 ScanVideos();

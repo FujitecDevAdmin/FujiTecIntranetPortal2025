@@ -97,7 +97,7 @@
         <asp:HiddenField runat="server" ClientIDMode="Static" ID="videoData" />
         <asp:HiddenField runat="server" ClientIDMode="Static" ID="quickLinksData" />
         <asp:HiddenField runat="server" ClientIDMode="Static" ID="flashNewsData" />
-
+ 
 
         <!-- Popup form -->
         <div runat="server" id="popupForm" class="popup" clientidmode="Static">
@@ -118,7 +118,7 @@
             </div>
         </div>
 
-        <!-- Video Overlay - Place outside of sections -->
+        <%--<!-- Video Overlay - Place outside of sections -->
         <div class="video-overlay" 
              style="position:fixed; 
                     top:0; 
@@ -177,7 +177,7 @@
                 Spoofing?<br><br>
                 Stay Tuned...
             </div>
-        </div>
+        </div>--%>
 
 
         <script>
@@ -189,7 +189,7 @@
             function hidePopup() {
                 document.getElementById('popupForm').style.display = 'none';
             }
-        </script>
+        </script>        
 
         <!-- Popup form -->
 
